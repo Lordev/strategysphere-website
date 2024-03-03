@@ -17,7 +17,7 @@ import {
 export default function NavMenu() {
     return (
         <header>
-            <Menubar className="fixed w-screen flex justify-center z-50">
+            <Menubar className="fixed w-screen flex justify-center z-50 bg-transparent border-transparent text-white">
                 <MenubarMenu>
                     <MenubarTrigger>File</MenubarTrigger>
                     <MenubarContent>

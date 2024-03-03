@@ -20,6 +20,7 @@ const config = {
         extend: {
             backgroundImage: {
                 "hero-buildings": "url('/Background-hero.jpg')",
+                "hero-side": "url('/office.jpg')",
             },
             colors: {
                 border: "hsl(var(--border))",
@@ -71,14 +72,25 @@ const config = {
                     from: { height: "var(--radix-accordion-content-height)" },
                     to: { height: "0" },
                 },
+                "zoom-top-right": {
+                    from: {
+                        backgroundPosition: "0% 0%",
+                        transform: "scale(1)",
+                    },
+                    to: {
+                        backgroundPosition: "10% 10%",
+                        transform: "scale(1.1)",
+                    },
+                },
             },
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
+                "zoom-top-right": "zoom-top-right 5s ease-in",
             },
         },
     },
-    plugins: [require("tailwindcss-animate")],
+    plugins: [require("tailwindcss-animate"), require("tailwind-gradient-mask-image")],
 } satisfies Config;
 
 export default config;

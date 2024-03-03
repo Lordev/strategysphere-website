@@ -65,7 +65,13 @@
     --ring: 0 0% 83.1%;
   }
 }
- 
+
+.mask-image {
+  mask-image: linear-gradient(deg, transparent 10%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, transparent 90%);
+  
+  
+}
+
 @layer base {
   * {
     @apply border-border;
