@@ -78,6 +78,7 @@
     --swiper-navigation-size: 25px;
 }
 
+
 .swiper-slide-next.custom-slide,
 .swiper-slide-prev.custom-slide {
     opacity: 0;
