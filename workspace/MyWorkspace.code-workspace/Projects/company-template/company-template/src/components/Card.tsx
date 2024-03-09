@@ -18,10 +18,8 @@ export default function Card({ title, content, icon }: CardProps) {
                     className="transition-colors duration-200 cursor-pointer opacity-80 hover:animate-bouncy h-8 w-8 hover:text-red-50 text-[#fff]"
                 />
             </div>
-            <h4 className="scroll-m-20 text-lg font-semibold font-[marcellus] text-[#fff]">
-                {title}
-            </h4>
-            <p className="text-[#ddd]">{content}</p>
+            <h4>{title}</h4>
+            <p className="text-muted">{content}</p>
         </div>
     );
 }

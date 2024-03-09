@@ -26,6 +26,8 @@ const config = {
                     "radial-gradient( var(--background),  var(--background), var(--background)), url(/building-orange.jpg)",
                 counseling: "url('/meetings.jpg')",
                 earth: "url('/earth.png')",
+                abstract: "url('/abstract-pattern.png')",
+                "team-banner": "url('/banner-employee.png')",
             },
             colors: {
                 border: "hsl(var(--border))",

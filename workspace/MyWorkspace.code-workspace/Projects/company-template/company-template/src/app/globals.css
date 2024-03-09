@@ -66,6 +66,47 @@
     }
 }
 
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background font-[inter] text-base  text-primary-foreground;
+    }
+}
+
+h1 {
+    @apply scroll-m-20 text-6xl tracking-tight;
+}
+
+h2 {
+    @apply scroll-m-20 text-5xl tracking-tight;
+}
+
+h3 {
+    @apply scroll-m-20 font-medium text-xs tracking-[.5rem] uppercase mt-2;
+}
+
+
+h4 {
+    @apply scroll-m-20 text-lg tracking-tight
+}
+
+h5 {
+    @apply scroll-m-20 text-2xl tracking-tight mb-2
+}
+
+h6 {
+    @apply scroll-m-20 text-base tracking-[.5rem] font-medium text-accent mb-2
+}
+
+p {
+    @apply mt-4
+}
+
+
+
 #quote-swiper {
     .swiper-button-prev,
     .swiper-button-next {
@@ -85,11 +126,3 @@
     transition: opacity 0.5s ease-in-out;
 }
 
-@layer base {
-    * {
-        @apply border-border;
-    }
-    body {
-        @apply bg-background font-[inter] text-base  text-primary-foreground;
-    }
-}

@@ -1,12 +1,12 @@
-"use client";
-import { Navigation, EffectFade, A11y } from "swiper/modules";
+// "use client";
+import { Navigation, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-export default function SliderElement() {
+export default function QuoteSlider() {
     const buttonStyling =
         "text-white w-10 h-10 flex justify-center items-center cursor-pointer block relative transition-transform duration-2500";
 
@@ -16,7 +16,7 @@ export default function SliderElement() {
             spaceBetween={50}
             slidesPerView={1}
             speed={800}
-            loop="true"
+            loop={true}
             navigation={{
                 nextEl: ".custom-next",
                 prevEl: ".custom-prev",

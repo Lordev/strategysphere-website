@@ -4,7 +4,7 @@ import { FrameIcon } from "@radix-ui/react-icons";
 
 export default function Hero() {
     return (
-        <div className="h-screen relative before:bg-hero-buildings before:absolute before:w-1/2 before:left-0 before:top-0 before:bottom-0">
+        <section className="h-screen relative before:bg-hero-buildings before:absolute before:w-1/2 before:left-0 before:top-0 before:bottom-0">
             <div className="grid grid-cols-[1fr_repeat(2,_minmax(900px,_1fr))_1fr] bg-[#424656] opacity-[.98] absolute inset-0 text-primary-foreground">
                 <div className="h-screen col-start-2 ">
                     <div
@@ -12,14 +12,10 @@ export default function Hero() {
                 flex flex-col justify-center items-start"
                     >
                         <div className="h-3/5 z-10 sel">
-                            <div className="flex-col flex gap-4 w-3/4">
-                                <h6 className="scroll-m-20 text-lg tracking-[.5rem] font-medium  text-[#B7891C]">
-                                    We deliver sublime services
-                                </h6>
-                                <h1 className="scroll-m-20 text-5xl tracking-tight">
-                                    Consulting office
-                                </h1>
-                                <p className="font-[inter text-base">
+                            <div className="w-3/4">
+                                <h6>We deliver sublime services</h6>
+                                <h2>Consulting office</h2>
+                                <p>
                                     A professional theme developed for contemporary
                                     business advisory and corporate websites.
                                 </p>
@@ -99,6 +95,6 @@ export default function Hero() {
                     <div className="bg-hero-side bg-cover animate-zoom-top-right h-screen"></div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
