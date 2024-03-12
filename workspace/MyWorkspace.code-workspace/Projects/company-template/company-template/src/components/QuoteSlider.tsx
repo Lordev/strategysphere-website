@@ -8,7 +8,7 @@ import "swiper/css/scrollbar";
 
 export default function QuoteSlider() {
     const buttonStyling =
-        "text-white w-10 h-10 flex justify-center items-center cursor-pointer block relative transition-transform duration-2500";
+        "text-white w-10 h-10 cursor-pointer block relative transition-transform duration-2500";
 
     return (
         <Swiper

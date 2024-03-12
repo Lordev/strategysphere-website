@@ -28,6 +28,11 @@ const config = {
                 earth: "url('/earth.png')",
                 abstract: "url('/abstract-pattern.png')",
                 "team-banner": "url('/banner-employee.png')",
+                "contact-me-banner": "url('/banner-contact-me.jpg')",
+                "about-us-banner": "url('/banner-about-us.jpg')",
+                "airport-terminal": "url('/airport-terminal.png')",
+                "suit-office": "url('/suit-office.png')",
+                "business-meeting-grayed": "url('/business-meeting-grayed.png')",
             },
             colors: {
                 border: "hsl(var(--border))",

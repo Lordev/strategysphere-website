@@ -88,13 +88,12 @@ h3 {
     @apply scroll-m-20 font-medium text-xs tracking-[.5rem] uppercase mt-2;
 }
 
-
 h4 {
-    @apply scroll-m-20 text-lg tracking-tight
+    @apply scroll-m-20 text-lg  tracking-tight
 }
 
 h5 {
-    @apply scroll-m-20 text-2xl tracking-tight mb-2
+    @apply font-[Marcellus] scroll-m-20 text-3xl tracking-tight mb-2 font-normal
 }
 
 h6 {
@@ -104,7 +103,6 @@ h6 {
 p {
     @apply mt-4
 }
-
 
 
 #quote-swiper {
@@ -119,6 +117,16 @@ p {
     --swiper-navigation-size: 25px;
 }
 
+#quote-swiper2 {
+    padding: 0 5rem;
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: relative;
+        color: var(--muted);
+    }
+    --swiper-navigation-size: 25px;
+
+}
 
 .swiper-slide-next.custom-slide,
 .swiper-slide-prev.custom-slide {
