@@ -6,10 +6,12 @@ import KeyPoints from "@/components/KeyPoints";
 import StraightAnglePieChart from "@/components/StraightAnglePieChart";
 import QuoteSlider from "@/components/QuoteSlider";
 import Button from "@/components/Button";
+import { Parallax } from "react-parallax";
+import { Fade } from "react-awesome-reveal";
 
 export default function Home() {
     return (
-        <>
+        <div className="overflow-hidden">
             <Hero />
             <section className="bg-foreground py-40 grid grid-cols-[1fr_minmax(1800px,_1fr)_1fr] text-primary">
                 <div className="col-start-2 text-center">
@@ -88,13 +90,15 @@ export default function Home() {
             </section>
             <section className="h-full relative grid grid-cols-2 py-40 before:bg-abstract before:absolute before:bg-cover before:h-full before:w-1/2 before:bg-no-repeat before:left-1/2 before:-z-20 before:opacity-5">
                 <div className="col-start-1">
-                    <Image
-                        src={"/meetings-lowq.jpg"}
-                        alt="professional advisory"
-                        width={1800}
-                        height={1200}
-                        className="aspect-[1800/1200] [clip-path:polygon(0%_0%,_0%_100%,_100%_100%, 100%_0%)] [clip-path:polygon(0%_0%,_0%_100%,_100%_100%, 100%_0%)] overflow-clip max-w-[800px]"
-                    />
+                    <Fade triggerOnce={true} direction="left">
+                        <Image
+                            src={"/three-employees.jpg"}
+                            alt="professional advisory"
+                            width={1800}
+                            height={1200}
+                            className="aspect-[1800/1200] [clip-path:polygon(0%_0%,_0%_100%,_100%_100%, 100%_0%)] [clip-path:polygon(0%_0%,_0%_100%,_100%_100%, 100%_0%)] overflow-clip max-w-[800px]"
+                        />
+                    </Fade>
                 </div>
                 <div className="col-start-2 w-1/2">
                     <svg
@@ -132,7 +136,9 @@ export default function Home() {
                 </div>
                 <div className="grid grid-cols-[1fr,_repeat(3,_minmax(600px,_1fr))_1fr]">
                     <div className="col-start-2 px-20 text-center flex flex-col gap-4">
-                        <StraightAnglePieChart />
+                        <Fade triggerOnce={true}>
+                            <StraightAnglePieChart />
+                        </Fade>
                         <h4>Financial report for 2019</h4>
                         <p className="text-muted">
                             Illum cupiditate corrupti expedita non dolores sequi. Facere
@@ -140,7 +146,9 @@ export default function Home() {
                         </p>
                     </div>
                     <div className="col-start-3 px-20 text-center flex flex-col gap-4">
-                        <StraightAnglePieChart />
+                        <Fade triggerOnce={true}>
+                            <StraightAnglePieChart />
+                        </Fade>
                         <h4>Financial report for 2020</h4>
                         <p className="text-muted">
                             Illum cupiditate corrupti expedita non dolores sequi. Facere
@@ -148,7 +156,9 @@ export default function Home() {
                         </p>
                     </div>
                     <div className="col-start-4 px-20 text-center flex flex-col gap-4">
-                        <StraightAnglePieChart />
+                        <Fade triggerOnce={true}>
+                            <StraightAnglePieChart />
+                        </Fade>
                         <h4>Financial report for 2021</h4>
                         <p>
                             Illum cupiditate corrupti expedita non dolores sequi. Facere
@@ -167,90 +177,99 @@ export default function Home() {
                     <Button title="Contact us" />
                 </div>
                 <div className="col-start-2">
-                    <Image
-                        src={"/tech-advice.jpg"}
-                        alt="professional advisory"
-                        width={1800}
-                        height={1200}
-                        className="aspect-[1800/1200] [clip-path:polygon(0%_0%,_0%_100%,_100%_100%, 100%_0%)] [clip-path:polygon(0%_0%,_0%_100%,_100%_100%, 100%_0%)] overflow-clip max-w-[800px]"
-                    />
+                    <Fade triggerOnce={true} direction="right">
+                        <Image
+                            src={"/notation.jpg"}
+                            alt="professional advisory"
+                            width={1800}
+                            height={1200}
+                            className="aspect-[1800/1200] [clip-path:polygon(0%_0%,_0%_100%,_100%_100%, 100%_0%)] [clip-path:polygon(0%_0%,_0%_100%,_100%_100%, 100%_0%)] overflow-clip max-w-[800px]"
+                        />
+                    </Fade>
                 </div>
             </section>
-            <section className="relative -z-20 bg-office-buildings h-full bg-blend-screen bg-cover grid grid-cols-[1fr_minmax(1800px,_1fr)_1fr] py-40">
-                <div className="col-start-2 h-full before:absolute before:left-0 before:top-0 before:bottom-0 before:w-full before:bg-background before:-z-10 before:opacity-[.95]">
-                    <div className="flex flex-col gap-y-4 justify-center text-center">
-                        <h6>Key Features</h6>
-                        <h1 className="text-[#fff]">Grow in various ways</h1>
+            <section className="">
+                <Parallax
+                    bgImage="/office-buildings.jpg"
+                    bgImageAlt="office buildings"
+                    strength={300}
+                    className=""
+                >
+                    <div className="my-40 w-[1800px] mx-auto">
+                        <div className="flex flex-col gap-y-4 justify-center text-center">
+                            <h6>Key Features</h6>
+                            <h1 className="text-[#fff]">Grow in various ways</h1>
+                        </div>
+                        <div className="col-start-2 col-span-3 grid grid-cols-4 gap-x-16  gap-y-20 opacity-90 mt-40">
+                            <KeyPoints
+                                image="/promotion-application.png"
+                                title="Strategy Consulting"
+                                content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                            />
+                            <KeyPoints
+                                image="/workflow.png"
+                                title="Solutions Provider"
+                                content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                            />
+                            <KeyPoints
+                                image="/community.png"
+                                title="Advisory Services"
+                                content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                            />
+                            <KeyPoints
+                                image="/meeting.png"
+                                title="Innovation Hub"
+                                content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                            />
+                            <KeyPoints
+                                image="/vision.png"
+                                title="Growth Partners"
+                                content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                            />
+                            <KeyPoints
+                                image="/data.png"
+                                title="Optimization Experts"
+                                content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                            />
+                            <KeyPoints
+                                image="/briefcase.png"
+                                title="Transformational Consulting"
+                                content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                            />
+                            <KeyPoints
+                                image="/brainstorming.png"
+                                title="Excellence Delivery"
+                                content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                            />
+                            <KeyPoints
+                                image="/consultation.png"
+                                title="Insightful Analysis"
+                                content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                            />
+                            <KeyPoints
+                                image="/data-modelling.png"
+                                title="Impactful Solutions"
+                                content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                            />
+                            <KeyPoints
+                                image="/goal.png"
+                                title="Performance Improvement"
+                                content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                            />
+                            <KeyPoints
+                                image="/promotion.png"
+                                title="Agile Consulting"
+                                content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                            />
+                        </div>
                     </div>
-                    <div className="col-start-2 col-span-3 grid grid-cols-4 gap-x-16  gap-y-20 opacity-90 mt-40">
-                        <KeyPoints
-                            image="/promotion-application.png"
-                            title="Data Driven"
-                            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                        />
-                        <KeyPoints
-                            image="/workflow.png"
-                            title="Data Driven"
-                            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                        />
-                        <KeyPoints
-                            image="/community.png"
-                            title="Data Driven"
-                            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                        />
-                        <KeyPoints
-                            image="/meeting.png"
-                            title="Data Driven"
-                            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                        />
-                        <KeyPoints
-                            image="/vision.png"
-                            title="Data Driven"
-                            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                        />
-                        <KeyPoints
-                            image="/data.png"
-                            title="Data Driven"
-                            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                        />
-                        <KeyPoints
-                            image="/briefcase.png"
-                            title="Data Driven"
-                            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                        />
-                        <KeyPoints
-                            image="/brainstorming.png"
-                            title="Data Driven"
-                            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                        />
-                        <KeyPoints
-                            image="/consultation.png"
-                            title="Data Driven"
-                            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                        />
-                        <KeyPoints
-                            image="/data-modelling.png"
-                            title="Data Driven"
-                            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                        />
-                        <KeyPoints
-                            image="/goal.png"
-                            title="Data Driven"
-                            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                        />
-                        <KeyPoints
-                            image="/promotion.png"
-                            title="Data Driven"
-                            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum dolor sit amet consectetur adipisicing elit."
-                        />
-                    </div>
-                </div>
+                </Parallax>
             </section>
             <section className="bg-foreground py-8 text-end text-primary">
                 <h2 className="mr-16">
                     Your company{`’`}s future with us, guaranteed success.
                 </h2>
             </section>
-        </>
+        </div>
     );
 }

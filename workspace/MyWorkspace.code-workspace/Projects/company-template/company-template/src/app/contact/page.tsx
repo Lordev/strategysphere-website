@@ -10,7 +10,7 @@ export default function Contact() {
                 </div>
             </div>
             <div>
-                <div className="grid grid-cols-2 col-start-2">
+                <div className="grid grid-cols-2 col-start-2 mb-40">
                     <div className="w-1/2 mx-auto py-40">
                         <ContactForm />
                     </div>

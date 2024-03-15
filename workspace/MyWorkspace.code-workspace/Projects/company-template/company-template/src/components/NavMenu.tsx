@@ -1,110 +1,52 @@
-import {
-    Menubar,
-    MenubarContent,
-    MenubarItem,
-    MenubarMenu,
-    MenubarSeparator,
-    MenubarShortcut,
-    MenubarTrigger,
-    MenubarSubTrigger,
-    MenubarSubContent,
-    MenubarSub,
-    MenubarCheckboxItem,
-    MenubarRadioItem,
-    MenubarRadioGroup,
-} from "@/components/ui/menubar";
+"use client";
+import { Menubar } from "@/components/ui/menubar";
+import Image from "next/image";
+import NavMenuItem from "./NavMenuItem";
+import { usePathname } from "next/navigation";
 
 export default function NavMenu() {
+    const pathName = usePathname();
+
+    const menuItems = [
+        { path: "/", name: "Home" },
+        { path: "/about", name: "About us" },
+        { path: "/team", name: "Our Team" },
+        { path: "/contact", name: "Contact Us" },
+    ];
+
     return (
         <header>
-            <Menubar className="fixed w-screen flex justify-center z-50 bg-white/20 border-transparent text-white">
-                <MenubarMenu>
-                    <MenubarTrigger>File</MenubarTrigger>
-                    <MenubarContent>
-                        <MenubarItem>
-                            New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                        </MenubarItem>
-                        <MenubarItem>
-                            New Window <MenubarShortcut>⌘N</MenubarShortcut>
-                        </MenubarItem>
-                        <MenubarItem disabled>New Incognito Window</MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarSub>
-                            <MenubarSubTrigger>Share</MenubarSubTrigger>
-                            <MenubarSubContent>
-                                <MenubarItem>Email link</MenubarItem>
-                                <MenubarItem>Messages</MenubarItem>
-                                <MenubarItem>Notes</MenubarItem>
-                            </MenubarSubContent>
-                        </MenubarSub>
-                        <MenubarSeparator />
-                        <MenubarItem>
-                            Print... <MenubarShortcut>⌘P</MenubarShortcut>
-                        </MenubarItem>
-                    </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                    <MenubarTrigger>Edit</MenubarTrigger>
-                    <MenubarContent>
-                        <MenubarItem>
-                            Undo <MenubarShortcut>⌘Z</MenubarShortcut>
-                        </MenubarItem>
-                        <MenubarItem>
-                            Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
-                        </MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarSub>
-                            <MenubarSubTrigger>Find</MenubarSubTrigger>
-                            <MenubarSubContent>
-                                <MenubarItem>Search the web</MenubarItem>
-                                <MenubarSeparator />
-                                <MenubarItem>Find...</MenubarItem>
-                                <MenubarItem>Find Next</MenubarItem>
-                                <MenubarItem>Find Previous</MenubarItem>
-                            </MenubarSubContent>
-                        </MenubarSub>
-                        <MenubarSeparator />
-                        <MenubarItem>Cut</MenubarItem>
-                        <MenubarItem>Copy</MenubarItem>
-                        <MenubarItem>Paste</MenubarItem>
-                    </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                    <MenubarTrigger>View</MenubarTrigger>
-                    <MenubarContent>
-                        <MenubarCheckboxItem>
-                            Always Show Bookmarks Bar
-                        </MenubarCheckboxItem>
-                        <MenubarCheckboxItem checked>
-                            Always Show Full URLs
-                        </MenubarCheckboxItem>
-                        <MenubarSeparator />
-                        <MenubarItem inset>
-                            Reload <MenubarShortcut>⌘R</MenubarShortcut>
-                        </MenubarItem>
-                        <MenubarItem disabled inset>
-                            Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
-                        </MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarItem inset>Toggle Fullscreen</MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarItem inset>Hide Sidebar</MenubarItem>
-                    </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                    <MenubarTrigger>Profiles</MenubarTrigger>
-                    <MenubarContent>
-                        <MenubarRadioGroup value="benoit">
-                            <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
-                            <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
-                            <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
-                        </MenubarRadioGroup>
-                        <MenubarSeparator />
-                        <MenubarItem inset>Edit...</MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarItem inset>Add Profile...</MenubarItem>
-                    </MenubarContent>
-                </MenubarMenu>
+            <Menubar
+                className="fixed z-50 bg-foreground border-transparent text-white h-fit w-full pl-8 py-0
+            shadow-xl  "
+            >
+                <div className="mr-0">
+                    <Image
+                        width={420}
+                        height={76}
+                        src={"/logo-black.png"}
+                        alt="logo business"
+                        className="-mx-4"
+                    />
+                </div>
+                <div className="flex flex-col gap-x-8 gap-y-4 ml-0 w-full border-l-muted border-l-[.5px] justify-end">
+                    <div className="flex gap-x-8">
+                        <div className="flex gap-x-8 text-3xl   pl-16 py-8 *:text-sm *:font-[500] *:text-primary *:uppercase *:flex *:items-center *:gap-2">
+                            {menuItems.map((i) => {
+                                return (
+                                    <div key={i.name}>
+                                        <NavMenuItem
+                                            link={i.path}
+                                            active={pathName === i.path}
+                                        >
+                                            {i.name}{" "}
+                                        </NavMenuItem>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
             </Menubar>
         </header>
     );

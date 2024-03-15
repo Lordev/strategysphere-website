@@ -1,12 +1,13 @@
 "use client";
 import Card from "./Card";
-import { FrameIcon } from "@radix-ui/react-icons";
+import { TargetIcon, HomeIcon, RocketIcon, PersonIcon } from "@radix-ui/react-icons";
+import HeroSlider from "./HeroSlider";
 
 export default function Hero() {
     return (
-        <section className="h-screen relative before:bg-hero-buildings before:absolute before:w-1/2 before:left-0 before:top-0 before:bottom-0">
-            <div className="grid grid-cols-[1fr_repeat(2,_minmax(900px,_1fr))_1fr] bg-[#424656] opacity-[.98] absolute inset-0 text-primary-foreground">
-                <div className="h-screen col-start-2 ">
+        <section className="h-screen relative before:bg-hero-buildings before:absolute before:w-1/2 before:inset-0 before:bg-cover">
+            <div className="grid grid-cols-[1fr_minmax(1800px,_1fr)_1fr] opacity-[.98] absolute inset-0 text-primary-foreground">
+                <div className="h-screen col-start-2">
                     <div
                         className=" h-full
                 flex flex-col justify-center items-start"
@@ -22,22 +23,22 @@ export default function Hero() {
                             </div>
                             <div className="mt-24  grid gap-8 text-center grid-cols-2">
                                 <Card
-                                    icon={FrameIcon}
+                                    icon={TargetIcon}
                                     title="Service 1"
                                     content="Lorem ipsum dolor sit amet consectetur adipisicing elit."
                                 />
                                 <Card
-                                    icon={FrameIcon}
+                                    icon={HomeIcon}
                                     title="Service 2"
                                     content="Lorem ipsum dolor sit amet consectetur adipisicing elit."
                                 />
                                 <Card
-                                    icon={FrameIcon}
+                                    icon={RocketIcon}
                                     title="Service 3"
                                     content="Lorem ipsum dolor sit amet consectetur adipisicing elit."
                                 />
                                 <Card
-                                    icon={FrameIcon}
+                                    icon={PersonIcon}
                                     title="Service 3"
                                     content="Lorem ipsum dolor sit amet consectetur adipisicing elit."
                                 />
@@ -91,9 +92,9 @@ export default function Hero() {
                         </div>
                     </div>
                 </div>
-                <div className="col-start-3 col-span-4 overflow-hidden">
-                    <div className="bg-hero-side bg-cover animate-zoom-top-right h-screen"></div>
-                </div>
+            </div>
+            <div className="overflow-hidden w-1/2 h-screen float-right">
+                <HeroSlider />
             </div>
         </section>
     );

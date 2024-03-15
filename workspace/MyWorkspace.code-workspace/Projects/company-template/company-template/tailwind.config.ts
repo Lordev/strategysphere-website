@@ -19,13 +19,13 @@ const config = {
         },
         extend: {
             backgroundImage: {
-                "hero-buildings": "url('/Background-hero.jpg')",
+                "hero-buildings": "url('/hero-left.jpg')",
                 "hero-side": "url('/office-lowq.jpg')",
                 footer: "url('/skyline.jpg')",
                 "office-buildings":
                     "radial-gradient( var(--background),  var(--background), var(--background)), url(/building-orange.jpg)",
                 counseling: "url('/meetings.jpg')",
-                earth: "url('/earth.png')",
+                earth: "url('/earth-left.png')",
                 abstract: "url('/abstract-pattern.png')",
                 "team-banner": "url('/banner-employee.png')",
                 "contact-me-banner": "url('/banner-contact-me.jpg')",
@@ -91,14 +91,14 @@ const config = {
                     },
                     to: {
                         backgroundPosition: "10% 10%",
-                        transform: "scale(1.1)",
+                        transform: "scale(1.15)",
                     },
                 },
             },
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
-                "zoom-top-right": "zoom-top-right 5s ease-in",
+                "zoom-top-right": "zoom-top-right 15s",
             },
         },
     },
