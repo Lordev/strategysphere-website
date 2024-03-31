@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: #F9E181;
+    --foreground: #FFEFCA;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -13,11 +13,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: #2F4858;
+    --primary-foreground: #807D74;
 
     --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary-foreground: #4B4737;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -73,4 +73,47 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  p {
+    @apply text-primary-foreground w-80 my-auto font-extralight;
+  }
+
+  h1 {
+    @apply font-[robot-serif] font-medium text-[40px] text-secondary-foreground uppercase
+  }
+
+  h2 {
+
+  }
+
+  h3 {
+
+  }
+
+  h4 {
+
+  }
+  
+  h5 {
+    @apply font-[robot-] font-medium text-sm text-secondary-foreground tracking-[.7rem] uppercase
+  }
+}
+
+#quote-swiper {
+  .swiper-button-prev,
+  .swiper-button-next {
+      position: relative;
+      color: var(--primary);
+      left: 0;
+      right: 0;
+  }
+
+  --swiper-navigation-size: 25px;
+}
+
+
+.swiper-slide-next.custom-slide,
+.swiper-slide-prev.custom-slide {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
