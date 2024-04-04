@@ -1,6 +1,6 @@
 export default function Header() {
     return (
-        <div className="flex gap-5 justify-between items-center px-12 bg-amber-100 max-md:flex-wrap max-md:px-5 fixed w-full">
+        <div className="flex gap-5 justify-between items-center px-12 bg-amber-100 max-md:flex-wrap max-md:px-5 fixed w-full z-50 shadow-lg">
             <div className="flex gap-2.5 items-center self-stretch my-auto">
                 <img
                     loading="lazy"

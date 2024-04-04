@@ -10,7 +10,7 @@ import "swiper/css/scrollbar";
 export default function QuoteSlider() {
     const buttonStyling =
         "w-10 h-10 cursor-pointer block relative transition-transform duration-2500";
-    const slides = "flex flex-row";
+    const slides = "flex flex-row mb-4";
 
     return (
         <Swiper

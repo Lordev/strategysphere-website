@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Kumbh_Sans, Roboto_Serif } from "next/font/google";
+import { Inter, Kumbh_Sans, Roboto_Serif, Krona_One } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 const kumbhSans = Kumbh_Sans({ subsets: ["latin"] });
 const robotoSerif = Roboto_Serif({ subsets: ["latin"] });
+const kronaOne = Krona_One({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -19,9 +20,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={
-                    inter.className && kumbhSans.className && robotoSerif.className
-                }
+                className={`
+                ${kumbhSans.className} 
+                ${robotoSerif.className}                    
+                ${inter.className} 
+                    ${kronaOne.className}
+                `}
             >
                 {children}
             </body>

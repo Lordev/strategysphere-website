@@ -20,6 +20,7 @@ const config = {
         extend: {
             backgroundImage: {
                 hero: "url('/Hero.jpg')",
+                banner: "url('/banner-festival.png')",
             },
 
             colors: {
@@ -45,15 +46,16 @@ const config = {
                     foreground: "hsl(var(--muted-foreground))",
                 },
                 accent: {
-                    DEFAULT: "hsl(var(--accent))",
-                    foreground: "hsl(var(--accent-foreground))",
+                    DEFAULT: "var(--accent)",
+                    secondary: "var(--accent-secondary)",
                 },
                 popover: {
                     DEFAULT: "hsl(var(--popover))",
                     foreground: "hsl(var(--popover-foreground))",
                 },
                 card: {
-                    DEFAULT: "hsl(var(--card))",
+                    DEFAULT: "var(--card)",
+                    dark: "var(--card-dark)",
                     foreground: "hsl(var(--card-foreground))",
                 },
             },
@@ -75,6 +77,7 @@ const config = {
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
+                "spin-slow": "spin 10s linear infinite",
             },
         },
     },
