@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Icon from "./Icon";
 
@@ -11,7 +9,7 @@ interface CardProps {
 
 export default function Card({ title, content, icon }: CardProps) {
     return (
-        <div className="w-80 h-full relative before:rounded-md before:bg-card before:absolute before:opacity-50 py-8 container before:inset-0 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1 before:-z-10 hover:shadow-2xl">
+        <div className="sm:w-80 w-full relative before:rounded-md before:bg-card before:absolute before:opacity-50 py-2 sm:py-8 px-4 before:inset-0 flex items-center sm:flex-col gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
             <div className="mx-auto">
                 <Icon
                     icon={icon}

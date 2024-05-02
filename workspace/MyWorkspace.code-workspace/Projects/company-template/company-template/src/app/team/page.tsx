@@ -1,20 +1,19 @@
 import Image from "next/image";
-import Icon from "@/components/Icon";
-import { FaSquareTwitter, FaLinkedin } from "react-icons/fa6";
 import CardEmployee from "@/components/CardEmployee";
+import CardEmployeeHover from "@/components/CardEmployeeHover";
 
 export default function OurTeam() {
     return (
         <>
-            <div className="py-60 col-span-4 bg-team-banner bg-cover grid grid-cols-[1fr_minmax(1800px,_1fr)_1fr]">
-                <div className="text-primary col-start-2">
+            <div className="py-60 bg-team-banner bg-cover ">
+                <div className="text-primary max-lg:px-8 max-w-screen-lg mx-auto">
                     <h1>Our Team</h1>
                     <h3>home - our team</h3>
                 </div>
             </div>
-            <div className=" grid grid-cols-[1fr_minmax(1800px,_1fr)_1fr]">
-                <div className="h-full col-start-2 mt-40">
-                    <div className="w-2/4">
+            <div className="max-w-screen-3xl mx-auto px-8 3xl:px-0">
+                <div className="h-full col-start-2 lg:mt-40 mt-20">
+                    <div className="border-l-accent border-l-2 sm:px-20 px-8 max-w-[900px]">
                         <h6>Management Consulting Group</h6>
                         <h2>
                             Meet Our Exceptional Team: Driving Success with Talent and
@@ -23,117 +22,38 @@ export default function OurTeam() {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-4 gap-8 mt-40 col-start-2 px-8">
-                <div>
-                    <Image
-                        src={"/office-worker-1.png"}
-                        width={750}
-                        height={1075}
-                        alt="image of an employee"
-                        className="mb-4 rounded-sm"
-                    />
-                    <div className="flex justify-between">
-                        <div>
-                            <h5>John doe</h5>
-                            <h3 className="text-muted">Technical Advisor</h3>
-                        </div>
-                        <div className="flex gap-2">
-                            <Icon
-                                icon={FaLinkedin}
-                                className="w-6 h-6 text-muted hover:text-foreground transition-colors duration-100 ease-in"
-                            />
-                            <Icon
-                                icon={FaSquareTwitter}
-                                className="w-6 h-6 text-muted hover:text-foreground transition-colors duration-100 ease-in"
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <Image
-                        src={"/office-worker-2.png"}
-                        width={750}
-                        height={1075}
-                        alt="image of an employee"
-                        className="mb-4 rounded-sm"
-                    />
-                    <div className="flex justify-between">
-                        <div>
-                            <h5>John doe</h5>
-                            <h3 className="text-muted">Technical Advisor</h3>
-                        </div>
-                        <div className="flex gap-2">
-                            <Icon
-                                icon={FaLinkedin}
-                                className="w-6 h-6 text-muted hover:text-foreground transition-colors duration-100 ease-in"
-                            />
-                            <Icon
-                                icon={FaSquareTwitter}
-                                className="w-6 h-6 text-muted hover:text-foreground transition-colors duration-100 ease-in"
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <Image
-                        src={"/office-worker-3.png"}
-                        width={750}
-                        height={1075}
-                        alt="image of an employee"
-                        className="mb-4 rounded-sm"
-                    />
-                    <div className="flex justify-between">
-                        <div>
-                            <h5>John doe</h5>
-                            <h3 className="text-muted">Technical Advisor</h3>
-                        </div>
-                        <div className="flex gap-2">
-                            <Icon
-                                icon={FaLinkedin}
-                                className="w-6 h-6 text-muted hover:text-foreground transition-colors duration-100 ease-in "
-                            />
-                            <Icon
-                                icon={FaSquareTwitter}
-                                className="w-6 h-6 text-muted hover:text-foreground transition-colors duration-100 ease-in"
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <Image
-                        src={"/office-worker-4.png"}
-                        width={750}
-                        height={1075}
-                        alt="image of an employee"
-                        className="mb-4 rounded-sm"
-                    />
-                    <div className="flex justify-between">
-                        <div>
-                            <h5>John doe</h5>
-                            <h3 className="text-muted">Technical Advisor</h3>
-                        </div>
-                        <div className="flex gap-2">
-                            <Icon
-                                icon={FaLinkedin}
-                                className="w-6 h-6 text-muted hover:text-foreground transition-colors duration-100 ease-in"
-                            />
-                            <Icon
-                                icon={FaSquareTwitter}
-                                className="w-6 h-6 text-muted hover:text-foreground transition-colors duration-100 ease-in"
-                            />
-                        </div>
-                    </div>
-                </div>
+
+            <div className="justify-center gap-8 lg:mt-40 mt-20 col-start-2 max-sm:px-8 grid xl:grid-cols-4 sm:grid-cols-2 ">
+                <CardEmployee
+                    imgUrl="/office-worker-1.png"
+                    name="John Doe"
+                    role="Technical Advisor"
+                />
+                <CardEmployee
+                    imgUrl="/office-worker-2.png"
+                    name="John Doe"
+                    role="Technical Advisor"
+                />
+                <CardEmployee
+                    imgUrl="/office-worker-3.png"
+                    name="John Doe"
+                    role="Technical Advisor"
+                />
+                <CardEmployee
+                    imgUrl="/office-worker-4.png"
+                    name="John Doe"
+                    role="Technical Advisor"
+                />
             </div>
-            <div className=" grid grid-cols-[1fr_minmax(1800px,_1fr)_1fr]">
-                <div className="h-full col-start-2 mt-40">
-                    <div className="w-1/2 pr-40">
+            <div className="max-w-screen-3xl mx-auto max-3xl:px-8">
+                <div className="h-full col-start-2 lg:mt-40 mt-20">
+                    <div className="md:w-1/2">
                         <h6>Management Consulting Group</h6>
                         <h2>
                             Lorem ipsum dolor sit amet, consec tetur adip iscing elit.
                         </h2>
                     </div>
-                    <div className="grid-cols-2 grid gap-x-16 mt-4">
+                    <div className="md:grid-cols-2 grid gap-x-16 mt-4">
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
                             voluptatibus fuga consequuntur dicta ipsum error doloremque
@@ -178,19 +98,51 @@ export default function OurTeam() {
                     </div>
                 </div>
             </div>
-            <div className="mt-40 grid-cols-4 grid gap-y-8 gap-x-8">
-                <CardEmployee img="/HRemployee-1.png" name="Johh Doe" role="Manager" />
-                <CardEmployee img="/HRemployee-2.png" name="Johh Doe" role="Manager" />
-                <CardEmployee img="/HRemployee-4.png" name="Johh Doe" role="Manager" />
-                <CardEmployee img="/HRemployee-5.png" name="Johh Doe" role="Manager" />
-                <CardEmployee img="/HRemployee-6.png" name="Johh Doe" role="Manager" />
-                <CardEmployee img="/HRemployee-7.png" name="Johh Doe" role="Manager" />
-                <CardEmployee img="/HRemployee-8.png" name="Johh Doe" role="Manager" />
-                <CardEmployee img="/HRemployee-10.png" name="Johh Doe" role="Manager" />
+            <div className="lg:mt-40 mt-20 xl:grid-cols-4 grid-cols-2 grid gap-8 justify-center">
+                <CardEmployeeHover
+                    img="/HRemployee-1.png"
+                    name="Johh Doe"
+                    role="Manager"
+                />
+                <CardEmployeeHover
+                    img="/HRemployee-2.png"
+                    name="Johh Doe"
+                    role="Manager"
+                />
+                <CardEmployeeHover
+                    img="/HRemployee-4.png"
+                    name="Johh Doe"
+                    role="Manager"
+                />
+                <CardEmployeeHover
+                    img="/HRemployee-5.png"
+                    name="Johh Doe"
+                    role="Manager"
+                />
+                <CardEmployeeHover
+                    img="/HRemployee-6.png"
+                    name="Johh Doe"
+                    role="Manager"
+                />
+                <CardEmployeeHover
+                    img="/HRemployee-7.png"
+                    name="Johh Doe"
+                    role="Manager"
+                />
+                <CardEmployeeHover
+                    img="/HRemployee-8.png"
+                    name="Johh Doe"
+                    role="Manager"
+                />
+                <CardEmployeeHover
+                    img="/HRemployee-10.png"
+                    name="Johh Doe"
+                    role="Manager"
+                />
             </div>
-            <div className="grid grid-cols-[1fr_minmax(1800px,_1fr)_1fr] my-40">
-                <div className="h-full col-start-2 mt-40">
-                    <div className="w-2/4">
+            <div className="lg:my-40 my-20 max-w-screen-3xl mx-auto max-3xl:px-8">
+                <div className="h-full col-start-2 ">
+                    <div className="max-w-4xl">
                         <h6>Management Consulting Group</h6>
                         <h2>
                             Meet Our Exceptional Team: Driving Success with Talent and
@@ -198,28 +150,12 @@ export default function OurTeam() {
                         </h2>
                     </div>
                 </div>
-                <div className="col-start-2 grid grid-cols-4 gap-x-28 mt-16 justify-center items-center *:flex  *:flex-col *:gap-4 ">
+                <div className="col-start-2 grid sm:grid-cols-2 mt-20 justify-center items-center gap-12 lg:grid-cols-4 ">
                     <div>
                         <Image
-                            width={60}
-                            height={60}
-                            src={"/portfolio.png"}
-                            alt="portfolio image"
-                        />
-                        Investments in startups and business are our speciality
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Animi, dignissimos quas! Obcaecati dolorem assumenda facere
-                            dolore ipsa, eveniet reiciendis non aperiam, atque delectus,
-                            sint dolorum rem recusandae eius facilis. Voluptates?
-                            Consequatur, nobis optio.
-                        </p>
-                    </div>
-                    <div>
-                        <Image
-                            width={60}
-                            height={60}
-                            src={"/portfolio-analysis.png"}
+                            width={50}
+                            height={50}
+                            src={"/growth.png"}
                             alt="portfolio image"
                         />
                         <h4>Investments in startups and business are our speciality</h4>
@@ -233,9 +169,9 @@ export default function OurTeam() {
                     </div>
                     <div>
                         <Image
-                            width={60}
-                            height={60}
-                            src={"/financial-profit.png"}
+                            width={50}
+                            height={50}
+                            src={"/startup.png"}
                             alt="portfolio image"
                         />
                         <h4>Investments in startups and business are our speciality</h4>
@@ -249,9 +185,25 @@ export default function OurTeam() {
                     </div>
                     <div>
                         <Image
-                            width={60}
-                            height={60}
-                            src={"/briefcase.png"}
+                            width={50}
+                            height={50}
+                            src={"/profits.png"}
+                            alt="portfolio image"
+                        />
+                        <h4>Investments in startups and business are our speciality</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Animi, dignissimos quas! Obcaecati dolorem assumenda facere
+                            dolore ipsa, eveniet reiciendis non aperiam, atque delectus,
+                            sint dolorum rem recusandae eius facilis. Voluptates?
+                            Consequatur, nobis optio.
+                        </p>
+                    </div>
+                    <div>
+                        <Image
+                            width={50}
+                            height={50}
+                            src={"/income-sources.png"}
                             alt="portfolio image"
                         />
                         <h4>Investments in startups and business are our speciality</h4>

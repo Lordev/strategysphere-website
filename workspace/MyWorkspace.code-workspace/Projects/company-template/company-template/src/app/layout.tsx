@@ -1,8 +1,11 @@
-import NavMenu from "@/components/NavMenu";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Marcellus } from "next/font/google";
+import Header from "@/components/Header";
+import MenuProvider from "@/context/useContextMenu";
+import ScreenBreakPointProvider from "@/context/useContextScreenBreakPoints";
+import NavMenu from "@/components/NavMenu";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -20,9 +23,14 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${inter.className} ${marcellus.className}`}>
-                <NavMenu />
-                {children}
-                <Footer />
+                <ScreenBreakPointProvider>
+                    <MenuProvider>
+                        <NavMenu />
+                        <Header />
+                        {children}
+                        <Footer />
+                    </MenuProvider>
+                </ScreenBreakPointProvider>
             </body>
         </html>
     );

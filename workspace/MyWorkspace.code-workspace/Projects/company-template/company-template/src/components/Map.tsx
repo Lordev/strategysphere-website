@@ -27,7 +27,7 @@ export default function Map() {
 
     const [map, setMap] = useState<MapType | null>(null);
 
-    const onLoad = useCallback(function callback(map) {
+    const onLoad = useCallback(function callback(map: any) {
         // This is just an example of getting and using the map instance!!! don't just blindly copy!
         const bounds = new window.google.maps.LatLngBounds(center);
         map.fitBounds(bounds);
@@ -35,7 +35,7 @@ export default function Map() {
         setMap(map);
     }, []);
 
-    const onUnmount = useCallback(function callback(map) {
+    const onUnmount = useCallback(function callback(map: any) {
         setMap(null);
     }, []);
 

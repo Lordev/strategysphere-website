@@ -10,13 +10,35 @@ const config = {
     ],
     prefix: "",
     theme: {
+        screens: {
+            "2xs": "360px",
+            xs: "480px",
+            sm: "640px",
+            md: "768px",
+            lg: "1024px",
+            xl: "1280px",
+            "2xl": "1536px",
+            "3xl": "1800px",
+            "4xl": "2000px",
+
+            // IF CHANGES: ALSO CHANGE UseScreenBreakPoints.tsx
+        },
         container: {
             center: true,
-            padding: "2rem",
+            padding: "1rem",
+
             screens: {
-                "2xl": "1400px",
+                "2xs": "360px",
+                xs: "480px",
+                sm: "640px",
+                md: "768px",
+                lg: "1024px",
+                xl: "1280px",
+                "2xl": "1536px",
+                "3xl": "1800px",
             },
         },
+
         extend: {
             backgroundImage: {
                 "hero-buildings": "url('/hero-left.jpg')",
@@ -99,6 +121,10 @@ const config = {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
                 "zoom-top-right": "zoom-top-right 15s",
+            },
+            margin: {
+                sm: "5rem",
+                lg: "10rem",
             },
         },
     },

@@ -1,39 +1,37 @@
 import Image from "next/image";
 import Icon from "./Icon";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaLinkedin, FaSquareTwitter } from "react-icons/fa6";
 
 interface CardEmployeeProps {
-    img: string;
+    imgUrl: string;
     name: string;
     role: string;
 }
 
-export default function CardEmployee({ img, name, role }: CardEmployeeProps) {
+export default function CardEmployee({ imgUrl, name, role }: CardEmployeeProps) {
     return (
-        <div className="-mb-8 rounded-sm transition-all duration-500 ease-in">
-            <div className="relative mb-8">
+        <div className="max-w-[1075px]">
+            <Image
+                src={imgUrl}
+                width={700}
+                height={1075}
+                alt="image of an employee"
+                className="mb-4 rounded-sm w-full"
+            />
+            <div className="flex justify-between">
                 <div>
-                    <Image
-                        src={img}
-                        width={500}
-                        height={500}
-                        alt="image of an employee"
-                        className="relative rounded-sm w-full"
-                    ></Image>
+                    <h5>{name}</h5>
+                    <h3 className="text-muted">{role}</h3>
                 </div>
-                <div className="absolute top-0 left-0 right-0 flex flex-col justify-end h-full bg-gradient-to-t from-black/90 to-transparent opacity-0 rounded-sm pb-4 transition-opacity duration-200 ease-out hover:opacity-100 group">
-                    <div className="px-4">
-                        <h5 className="opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                            {name}
-                        </h5>
-                        <div className="opacity-0 translate-y-4 group-hover:opacity-100 group-hover:-translate-y-0 transition-all duration-500 ease-out flex flex-row justify-between ">
-                            <h3>{role}</h3>
-                            <Icon
-                                icon={FaLinkedin}
-                                className="w-6 h-6 text-muted hover:text-foreground transition-colors duration-100 ease-out"
-                            />
-                        </div>
-                    </div>
+                <div className="flex flex-col gap-2">
+                    <Icon
+                        icon={FaLinkedin}
+                        className="w-6 h-6 text-muted hover:text-foreground transition-colors duration-100 ease-in"
+                    />
+                    <Icon
+                        icon={FaSquareTwitter}
+                        className="w-6 h-6 text-muted hover:text-foreground transition-colors duration-100 ease-in"
+                    />
                 </div>
             </div>
         </div>

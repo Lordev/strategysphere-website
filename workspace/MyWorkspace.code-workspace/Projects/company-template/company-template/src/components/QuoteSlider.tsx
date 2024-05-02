@@ -1,4 +1,5 @@
-// "use client";
+"use client";
+
 import { Navigation, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -9,6 +10,8 @@ import "swiper/css/scrollbar";
 export default function QuoteSlider() {
     const buttonStyling =
         "text-white w-10 h-10 cursor-pointer block relative transition-transform duration-2500";
+
+    const slideStyling = "text-white 2xl:text-4xl text-2xl";
 
     return (
         <Swiper
@@ -28,37 +31,37 @@ export default function QuoteSlider() {
             className="relative"
             id="quote-swiper"
         >
-            <SwiperSlide className="custom-slide">
-                <p className="text-3xl pb-32 ">
+            <SwiperSlide className={slideStyling}>
+                <div className="pb-32">
                     {'"'}Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
                     obcaecati minus ducimus saepe culpa vitae porro exercitationem tenetur
                     omnis! Sapiente, dignissimos? Perferendis voluptate aut ut porro,
                     earum neque minima sint.{'"'}
-                </p>
+                </div>
             </SwiperSlide>
-            <SwiperSlide className="custom-slide">
-                <p className="text-3xl pb-32 ">
+            <SwiperSlide className={slideStyling}>
+                <div className="pb-32 ">
                     {'"'}Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
                     obcaecati minus ducimus saepe culpa vitae porro exercitationem tenetur
                     omnis! Sapiente, dignissimos? Perferendis voluptate aut ut porro,
                     earum neque minima sint.{'"'}
-                </p>
+                </div>
             </SwiperSlide>
-            <SwiperSlide className="custom-slide">
-                <p className="text-3xl pb-32 ">
+            <SwiperSlide className={slideStyling}>
+                <div className="pb-32 ">
                     {'"'}Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
                     obcaecati minus ducimus saepe culpa vitae porro exercitationem tenetur
                     omnis! Sapiente, dignissimos? Perferendis voluptate aut ut porro,
                     earum neque minima sint.{'"'}
-                </p>
+                </div>
             </SwiperSlide>
-            <SwiperSlide className="custom-slide">
-                <p className="text-3xl pb-32 ">
+            <SwiperSlide className={slideStyling}>
+                <div className="pb-32 ">
                     {'"'}Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
                     obcaecati minus ducimus saepe culpa vitae porro exercitationem tenetur
                     omnis! Sapiente, dignissimos? Perferendis voluptate aut ut porro,
                     earum neque minima sint.{'"'}
-                </p>
+                </div>
             </SwiperSlide>
             <div className="absolute bottom-2 flex gap-8 w-fit">
                 <div

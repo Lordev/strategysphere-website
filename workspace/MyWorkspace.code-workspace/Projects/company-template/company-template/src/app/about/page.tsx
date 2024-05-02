@@ -1,4 +1,3 @@
-"use client";
 import QuoteSliderTwo from "@/components/QuoteSliderTwo";
 import VideoPlayer from "@/components/VIdeoPlayer";
 import Image from "next/image";
@@ -6,16 +5,16 @@ import Image from "next/image";
 export default function About() {
     return (
         <>
-            <div className="py-60 col-span-4 bg-about-us-banner bg-cover grid grid-cols-[1fr_minmax(1800px,_1fr)_1fr]">
-                <div className="text-primary col-start-2">
+            <div className="py-60 bg-about-us-banner bg-cover">
+                <div className="text-primary px-8 max-w-screen-lg lg:px-0 mx-auto">
                     <h1>About Us</h1>
                     <h3>home - About Us</h3>
                 </div>
             </div>
-            <div className=" grid grid-cols-[1fr_minmax(1800px,_1fr)_1fr]">
-                <div className="h-full col-start-2 mt-40 ">
-                    <div className="w-2/4 border-l-accent border-l-2 pl-32">
-                        <h6>ALEX LEE, CEO</h6>
+            <div className="max-w-screen-3xl mx-auto px-8 3xl:px-0">
+                <div className="h-full col-start-2 mt-40">
+                    <div className="border-l-accent border-l-2 sm:px-20 px-8 max-w-[900px]">
+                        <h6>ALEX LEE - CEO</h6>
                         <h2>
                             Launch your creative ideas. Whatever you imagine we will make
                             it happen with our team of specialists.
@@ -23,7 +22,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <div className="col-start-2 grid grid-cols-[2fr_1fr] mt-40 gap-8">
+            <div className="col-start-2 lg:grid lg:grid-cols-[2fr_1fr]   mt-40 gap-8">
                 <div className="relative before:bg-foreground before:inset-0 before:absolute before:opacity-70 before:[clip-path:_polygon(0_0,_40%_0,_50%_100%,_0%_100%)]">
                     <Image
                         src={"/airport-terminal.png"}
@@ -33,14 +32,14 @@ export default function About() {
                         className="h-full w-full"
                     />
                 </div>
-                <div className="grid grid-rows-2 gap-8">
+                <div className="grid lg:grid-rows-2 sm:grid-cols-2 lg:grid-cols-none gap-8 lg:mt-0 mt-8">
                     <div>
                         <Image
                             src={"/suit-office.png"}
                             height={500}
                             width={623}
                             alt="airport hallway image"
-                            className="h-full w-full"
+                            className="h-full w-full object-cover"
                         />
                     </div>
 
@@ -54,11 +53,11 @@ export default function About() {
                                 className="h-full w-full 
                                 scale-x-105
                                 translate-x-0
-                                group-hover:translate-x-4
+                                group-hover:translate-x-
                                 
                                 transition-transform duration-700 ease-out"
                             />
-                            <div className="absolute bottom-16 px-16 flex-row justify-between flex w-full items-center">
+                            <div className="absolute bottom-16 px-8 flex-row justify-between flex w-full items-center gap-4">
                                 <h5>Our Centralized Database Platform</h5>
                                 <svg
                                     version="1.1"
@@ -95,18 +94,18 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <div className=" grid grid-cols-[1fr_minmax(1800px,_1fr)_1fr] mt-40">
-                <div className="col-start-2 grid grid-cols-2">
+            <div className=" container mt-40">
+                <div className="col-start-2 lg:grid lg:grid-cols-[1fr_minmax(600px,1fr)] gap-8 ">
                     <div>
                         <h6>Inspirational Business Values</h6>
                         <h2>Our Solutions Are The Key For Good Business Flow</h2>
                     </div>
-                    <div className="grid grid-cols-2 gap-16">
+                    <div className="grid xs:grid-cols-2 gap-16 :mt-0 mt-16">
                         <div>
                             <Image
                                 width={50}
                                 height={50}
-                                src={"/portfolio.png"}
+                                src={"/values.png"}
                                 alt="portfolio image"
                                 className="mb-4"
                             />
@@ -121,7 +120,7 @@ export default function About() {
                             <Image
                                 width={50}
                                 height={50}
-                                src={"/portfolio-analysis.png"}
+                                src={"/people.png"}
                                 alt="portfolio image"
                                 className="mb-4"
                             />
@@ -136,7 +135,7 @@ export default function About() {
                             <Image
                                 width={50}
                                 height={50}
-                                src={"/financial-profit.png"}
+                                src={"/growth.png"}
                                 alt="portfolio image"
                                 className="mb-4"
                             />
@@ -151,7 +150,7 @@ export default function About() {
                             <Image
                                 width={50}
                                 height={50}
-                                src={"/briefcase.png"}
+                                src={"/opportunity.png"}
                                 alt="portfolio image"
                                 className="mb-4"
                             />
@@ -165,16 +164,17 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-[1fr_3fr] mt-40  mb-40">
-                <div className="relative group overflow-hidden">
+            <div className="md:grid md:grid-cols-[minmax(350px,1fr)_3fr] mt-40">
+                <div className="relative group overflow-hidden h-60 md:h-full flex items-center">
                     <Image
                         src={"/buildings-blue-filter.png"}
-                        width={668}
-                        height={1072}
                         alt="airport hallway image"
-                        className="h-full w-full "
+                        fill
+                        style={{
+                            objectFit: "cover",
+                        }}
                     />
-                    <div className="absolute bottom-16 pl-16 pr-52 flex-row justify-between flex items-center ">
+                    <div className="absolute bottom-16 px-8 max-w-[350px] flex-row justify-between flex items-center w-full">
                         <h5>
                             Watch our business presentation with a look into our services
                             in 2024
@@ -185,31 +185,27 @@ export default function About() {
                     <VideoPlayer />
                 </div>
             </div>
-            <div className="grid grid-cols-[1fr_minmax(1800px,_1fr)_1fr] my-40">
-                <div className="h-full col-start-2 ">
-                    <div className="w-4/5 mx-auto px-16">
-                        <svg
-                            fill="#000000"
-                            viewBox="0 0 32 32"
-                            version="1.1"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-20 h-20 fill-accent mb-16 mx-auto"
-                        >
-                            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                            <g
-                                id="SVGRepo_tracerCarrier"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            ></g>
-                            <g id="SVGRepo_iconCarrier">
-                                {" "}
-                                <title>quote</title>{" "}
-                                <path d="M9.563 8.469l-0.813-1.25c-5.625 3.781-8.75 8.375-8.75 12.156 0 3.656 2.688 5.375 4.969 5.375 2.875 0 4.906-2.438 4.906-5 0-2.156-1.375-4-3.219-4.688-0.531-0.188-1.031-0.344-1.031-1.25 0-1.156 0.844-2.875 3.938-5.344zM21.969 8.469l-0.813-1.25c-5.563 3.781-8.75 8.375-8.75 12.156 0 3.656 2.75 5.375 5.031 5.375 2.906 0 4.969-2.438 4.969-5 0-2.156-1.406-4-3.313-4.688-0.531-0.188-1-0.344-1-1.25 0-1.156 0.875-2.875 3.875-5.344z"></path>{" "}
-                            </g>
-                        </svg>
-                        <QuoteSliderTwo />
-                    </div>
-                </div>
+            <div className="w-screen py-40">
+                <svg
+                    fill="#000000"
+                    viewBox="0 0 32 32"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-20 h-20 fill-accent mb-16 mx-auto"
+                >
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                    <g
+                        id="SVGRepo_tracerCarrier"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                        {" "}
+                        <title>quote</title>{" "}
+                        <path d="M9.563 8.469l-0.813-1.25c-5.625 3.781-8.75 8.375-8.75 12.156 0 3.656 2.688 5.375 4.969 5.375 2.875 0 4.906-2.438 4.906-5 0-2.156-1.375-4-3.219-4.688-0.531-0.188-1.031-0.344-1.031-1.25 0-1.156 0.844-2.875 3.938-5.344zM21.969 8.469l-0.813-1.25c-5.563 3.781-8.75 8.375-8.75 12.156 0 3.656 2.75 5.375 5.031 5.375 2.906 0 4.969-2.438 4.969-5 0-2.156-1.406-4-3.313-4.688-0.531-0.188-1-0.344-1-1.25 0-1.156 0.875-2.875 3.875-5.344z"></path>{" "}
+                    </g>
+                </svg>
+                <QuoteSliderTwo />
             </div>
             <div></div>
         </>
