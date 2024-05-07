@@ -2,7 +2,7 @@
 
 import MenuBarLink from "./MenuBarLink";
 import { usePathname } from "next/navigation";
-import MenuButton from "./menuButton";
+import MenuButton from "./MenuButton";
 
 export default function Menu() {
     const pathName = usePathname();
@@ -16,7 +16,7 @@ export default function Menu() {
 
     return (
         <>
-            <div className="-3xl xl:pl-16 xl:gap-8 py-8 flex">
+            <div className="-3xl xl:pl-P6 xl:gap-8 py-4 md:py-8 flex">
                 {menuLink.map((item) => (
                     <div
                         key={item.name}

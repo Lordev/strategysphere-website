@@ -1,17 +1,21 @@
+import FadeWrapper from "@/components/FadeWrapper";
+import LineChart from "@/components/LineChart";
 import QuoteSliderTwo from "@/components/QuoteSliderTwo";
 import VideoPlayer from "@/components/VIdeoPlayer";
+import VideoModal from "@/components/VideoModal";
+import FadeInAnimation from "@/components/animation/FadeInAnimation";
 import Image from "next/image";
 
 export default function About() {
     return (
-        <>
-            <div className="py-60 bg-about-us-banner bg-cover">
+        <main className="overflow-hidden">
+            <section className="py-60 bg-about-us-banner bg-cover bg-center">
                 <div className="text-primary px-8 max-w-screen-lg lg:px-0 mx-auto">
                     <h1>About Us</h1>
-                    <h3>home - About Us</h3>
+                    <h3 className="text-accent">home - About Us</h3>
                 </div>
-            </div>
-            <div className="max-w-screen-3xl mx-auto px-8 3xl:px-0">
+            </section>
+            <section className="max-w-screen-3xl mx-auto px-8 3xl:px-0">
                 <div className="h-full col-start-2 mt-40">
                     <div className="border-l-accent border-l-2 sm:px-20 px-8 max-w-[900px]">
                         <h6>ALEX LEE - CEO</h6>
@@ -21,9 +25,9 @@ export default function About() {
                         </h2>
                     </div>
                 </div>
-            </div>
-            <div className="col-start-2 lg:grid lg:grid-cols-[2fr_1fr]   mt-40 gap-8">
-                <div className="relative before:bg-foreground before:inset-0 before:absolute before:opacity-70 before:[clip-path:_polygon(0_0,_40%_0,_50%_100%,_0%_100%)]">
+            </section>
+            <section className="col-start-2 lg:grid lg:grid-cols-[2fr_1fr]   mt-40 gap-8">
+                <div className="relative before:bg-foreground before:inset-0 before:absolute before:opacity-70 before:[clip-path:_polygon(0_0,_40%_0,_60%_100%,_0%_100%)]">
                     <Image
                         src={"/airport-terminal.png"}
                         height={1000}
@@ -32,11 +36,11 @@ export default function About() {
                         className="h-full w-full"
                     />
                 </div>
-                <div className="grid lg:grid-rows-2 sm:grid-cols-2 lg:grid-cols-none gap-8 lg:mt-0 mt-8">
+                <div className="grid md:grid-rows-2 sm:grid-cols-2 lg:grid-cols-none gap-8 lg:mt-0 mt-8">
                     <div>
                         <Image
                             src={"/suit-office.png"}
-                            height={500}
+                            height={600}
                             width={623}
                             alt="airport hallway image"
                             className="h-full w-full object-cover"
@@ -53,11 +57,10 @@ export default function About() {
                                 className="h-full w-full 
                                 scale-x-105
                                 translate-x-0
-                                group-hover:translate-x-
-                                
+                                group-hover:translate-x-1
                                 transition-transform duration-700 ease-out"
                             />
-                            <div className="absolute bottom-16 px-8 flex-row justify-between flex w-full items-center gap-4">
+                            <div className="absolute bottom-16 px-8 flex-row justify-between flex w-full items-center gap-4 ">
                                 <h5>Our Centralized Database Platform</h5>
                                 <svg
                                     version="1.1"
@@ -93,78 +96,74 @@ export default function About() {
                         </a>
                     </div>
                 </div>
-            </div>
-            <div className=" container mt-40">
-                <div className="col-start-2 lg:grid lg:grid-cols-[1fr_minmax(600px,1fr)] gap-8 ">
+            </section>
+            <section className="bg-primary py-20">
+                <div className="col-start-2 lg:grid lg:grid-cols-[1fr_minmax(600px,1fr)] gap-8 container text-foreground">
                     <div>
                         <h6>Inspirational Business Values</h6>
                         <h2>Our Solutions Are The Key For Good Business Flow</h2>
                     </div>
-                    <div className="grid xs:grid-cols-2 gap-16 :mt-0 mt-16">
+                    <div className="grid xs:grid-cols-2 gap-16 max-lg:mt-16">
                         <div>
                             <Image
-                                width={50}
-                                height={50}
-                                src={"/values.png"}
+                                width={60}
+                                height={60}
+                                src={"/1.png"}
                                 alt="portfolio image"
-                                className="mb-4"
+                                className="mb-4 opacity-50"
                             />
                             <h5>Our Values</h5>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Deleniti architecto maxime similique quod, aspernatur
-                                fugiat assumenda cum.
+                                Guided by integrity, excellence, and innovation, our
+                                values drive every decision and action.
                             </p>
                         </div>
                         <div>
                             <Image
-                                width={50}
-                                height={50}
-                                src={"/people.png"}
+                                width={60}
+                                height={60}
+                                src={"/2.png"}
                                 alt="portfolio image"
-                                className="mb-4"
+                                className="mb-4 opacity-50"
                             />
                             <h5>People First</h5>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Deleniti architecto maxime similique quod, aspernatur
-                                fugiat assumenda cum.
+                                We prioritize the well-being and growth of our team and
+                                clients, fostering a culture of collaboration and support.
                             </p>
                         </div>
                         <div>
                             <Image
-                                width={50}
-                                height={50}
-                                src={"/growth.png"}
+                                width={60}
+                                height={60}
+                                src={"/3.png"}
                                 alt="portfolio image"
-                                className="mb-4"
+                                className="mb-4 opacity-50"
                             />
                             <h5>Advance Together</h5>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Deleniti architecto maxime similique quod, aspernatur
-                                fugiat assumenda cum.
+                                Together, we strive for progress and success, leveraging
+                                collective strengths to achieve shared goals.
                             </p>
                         </div>
                         <div>
                             <Image
-                                width={50}
-                                height={50}
-                                src={"/opportunity.png"}
+                                width={60}
+                                height={60}
+                                src={"/4.png"}
                                 alt="portfolio image"
-                                className="mb-4"
+                                className="mb-4 opacity-50"
                             />
-                            <h5>Opportunity gains</h5>
+                            <h5>Opportunity Gains</h5>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Deleniti architecto maxime similique quod, aspernatur
-                                fugiat assumenda cum.
+                                We seize every opportunity for growth and development,
+                                turning challenges into stepping stones for success.
                             </p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="md:grid md:grid-cols-[minmax(350px,1fr)_3fr] mt-40">
+            </section>
+            <section className="md:grid md:grid-cols-[minmax(360px,1fr)_3fr] ">
                 <div className="relative group overflow-hidden h-60 md:h-full flex items-center">
                     <Image
                         src={"/buildings-blue-filter.png"}
@@ -174,18 +173,45 @@ export default function About() {
                             objectFit: "cover",
                         }}
                     />
-                    <div className="absolute bottom-16 px-8 max-w-[350px] flex-row justify-between flex items-center w-full">
+                    <div className="absolute bottom-16 px-8 max-w-[360px] flex-row justify-between flex items-center w-full">
                         <h5>
                             Watch our business presentation with a look into our services
                             in 2024
                         </h5>
                     </div>
                 </div>
-                <div>
-                    <VideoPlayer />
+                <VideoModal />
+                {/* <VideoPlayer /> */}
+            </section>
+            <section className="my-40">
+                <div className="grid grid-cols-2 gap-16 py-2">
+                    <div className="relative">
+                        <FadeWrapper fadeProps={{ direction: "left", triggerOnce: true }}>
+                            <Image
+                                src={"/calculations-2.png"}
+                                alt="calculating strategies"
+                                width={1800}
+                                height={1200}
+                                className="aspect-[1800/1200] [clip-path:polygon(0%_0%,_0%_100%,_100%_100%, 100%_0%)] [clip-path:polygon(0%_0%,_0%_100%,_100%_100%, 100%_0%)] overflow-clip w-full h-full "
+                            />
+                        </FadeWrapper>
+                    </div>
+                    <div className="flex flex-col gap-8 justify-center">
+                        <div className="pb-16 max-w-[900px]">
+                            <h6>Inspirational Business Values</h6>
+                            <h2>Our Solutions Are The Key For Good Business Flow</h2>
+                        </div>
+                        <FadeWrapper
+                            fadeProps={{ direction: "right", triggerOnce: true }}
+                        >
+                            <div className="">
+                                <LineChart />
+                            </div>
+                        </FadeWrapper>
+                    </div>
                 </div>
-            </div>
-            <div className="w-screen py-40">
+            </section>
+            <section className="w-screen my-40">
                 <svg
                     fill="#000000"
                     viewBox="0 0 32 32"
@@ -206,8 +232,7 @@ export default function About() {
                     </g>
                 </svg>
                 <QuoteSliderTwo />
-            </div>
-            <div></div>
-        </>
+            </section>
+        </main>
     );
 }

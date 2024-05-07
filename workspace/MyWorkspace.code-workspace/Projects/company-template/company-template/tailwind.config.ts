@@ -50,11 +50,13 @@ const config = {
                 earth: "url('/earth-left.png')",
                 abstract: "url('/abstract-pattern.png')",
                 "team-banner": "url('/banner-employee.png')",
-                "contact-me-banner": "url('/banner-contact-me.jpg')",
+                "contact-me-banner": "url('/banner-contact-us.png')",
                 "about-us-banner": "url('/banner-about-us.jpg')",
                 "airport-terminal": "url('/airport-terminal.png')",
                 "suit-office": "url('/suit-office.png')",
                 "business-meeting-grayed": "url('/business-meeting-grayed.png')",
+                "background-menu": "url('/background-menu-dark.png')",
+                "offices-contact": "url('/offices-contact.png')",
             },
             colors: {
                 border: "hsl(var(--border))",
@@ -68,8 +70,13 @@ const config = {
                 },
                 secondary: {
                     DEFAULT: "var(--secondary)",
-                    foreground: "hsl(var(--secondary-foreground))",
+                    foreground: "var(--secondary-foreground)",
                 },
+
+                tertiary: {
+                    DEFAULT: "var(--tertiary)",
+                },
+
                 destructive: {
                     DEFAULT: "hsl(var(--destructive))",
                     foreground: "hsl(var(--destructive-foreground))",
@@ -128,7 +135,17 @@ const config = {
             },
         },
     },
-    plugins: [require("tailwindcss-animate"), require("tailwind-gradient-mask-image")],
+    plugins: [
+        require("postcss-nesting"), // Enable CSS nesting
+        require("tailwindcss"),
+        require("tailwindcss-animate"),
+        require("tailwind-gradient-mask-image"),
+        require("autoprefixer"),
+        require("postcss-import"),
+        require("tailwindcss/nesting"),
+        require("daisyui"),
+        // Other plugins...
+    ],
 } satisfies Config;
 
 export default config;

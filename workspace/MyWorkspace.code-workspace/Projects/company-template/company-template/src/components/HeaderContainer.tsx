@@ -1,15 +1,9 @@
 "use client";
-import Image from "next/image";
 import { PropsWithChildren, useEffect, useState } from "react";
-import MenuBar from "./MenuBar";
-import Link from "next/link";
-import { useMenu } from "@/context/useContextMenu";
 import { useScreenBreakPoint } from "@/context/useContextScreenBreakPoints";
-import { IconMenu } from "@/components/Svg/Index";
 
-export default function HeaderContainer({children} : PropsWithChildren) {
+export default function HeaderContainer({ children }: PropsWithChildren) {
     const { smallDisplay } = useScreenBreakPoint();
-    const { isMenuOpen, openMenu } = useMenu();
     const [sticky, setSticky] = useState(false);
     const [direction, setDirection] = useState("up");
     const [prevScroll, setPrevScroll] = useState(0);
@@ -41,9 +35,9 @@ export default function HeaderContainer({children} : PropsWithChildren) {
     }, [currentScroll]);
 
     return (
-        <div className="min-h-[86px]">
+        <div className="md:min-h-[86px] min-h-[64px]">
             <header
-                className={`transition-all duration-500 ease-in-out z-[999] w-full ${
+                className={`transition-all duration-500 ease-in-out z-[998] w-full ${
                     !sticky ? "block" : "fixed  shadow-xl "
                 } ${sticky && direction === "up" ? "top-0" : ""} ${
                     sticky && direction === "down" ? " top-[-100%]" : ""

@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Header() {
     return (
         <HeaderContainer>
-            <div className="bg-foreground border-transparent text-white pl-8 py-12 flex h-10 items-center space-x-1 rounded-md border p-1">
+            <div className="bg-zinc-200 border-transparent text-white pl-8 md:py-12 py-8 flex h-10 items-center space-x-1">
                 <div className="mr-0">
                     <Link href="/">
                         <Image
@@ -18,8 +18,8 @@ export default function Header() {
                         />
                     </Link>
                 </div>
-                <div className="flex flex-col gap-x-8 ml-0 w-full border-l-muted border-l-[.5px] justify-end">
-                    <div className="flex sm:gap-x-8 max-xl:justify-end max-xl:pr-8">
+                <div className="flex flex-col gap-x-8 w-full border-l-muted border-l-[.5px] justify-end">
+                    <div className="flex sm:gap-x-8 max-xl:justify-end max-xl:pr-8 ml-8">
                         <MenuBar />
                     </div>
                 </div>

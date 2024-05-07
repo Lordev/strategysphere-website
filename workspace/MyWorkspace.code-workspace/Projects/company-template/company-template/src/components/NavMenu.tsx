@@ -1,28 +1,35 @@
 "use client";
 import { useMenu } from "@/context/useContextMenu";
-import { useScreenBreakPoint } from "@/context/useContextScreenBreakPoints";
 import { usePathname } from "next/navigation";
+import NavMenuContainer from "./NavMenuContainer";
+import NavMenuLink from "./NavMenuLink";
 
 export default function NavMenu() {
     const { isMenuOpen, closeMenu } = useMenu();
-    const { smallDisplay } = useScreenBreakPoint();
+    const pathName = usePathname();
 
     const menuLinks = [
         { text: "Home", url: "/" },
-        { text: "Artists", url: "/artists" },
-        { text: "Contact", url: "/contact" },
-        { text: "Menu", url: "/menu" },
-        { text: "Blog", url: "/blog" },
+        { text: "About Us", url: "/about" },
+        { text: "Our Team", url: "/team" },
+        { text: "Contact Us", url: "/contact" },
     ];
 
     return (
-        <nav
-            className={`nav-menu h-screen w-full bg-foreground transition-all duration-300 z-50 fixed   
-            ${
-                isMenuOpen
-                    ? "visible opacity-100 translate-y-0"
-                    : "opacity-0 -translate-y-[100%] delay-1000"
-            }`}
-        ></nav>
+        <NavMenuContainer>
+            <ul className={`lg:ml-4 ml-0 2xl:ml-20 lg:py-24 text-center grid gap-8`}>
+                {menuLinks.map((link, index) => (
+                    <li key={index} className="lg:pt-0">
+                        <NavMenuLink
+                            active={pathName === link.url}
+                            href={link.url}
+                            onClick={isMenuOpen ? closeMenu : undefined}
+                        >
+                            {link.text}
+                        </NavMenuLink>
+                    </li>
+                ))}
+            </ul>
+        </NavMenuContainer>
     );
 }

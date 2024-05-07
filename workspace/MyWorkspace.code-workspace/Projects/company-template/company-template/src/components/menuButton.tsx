@@ -9,7 +9,7 @@ export default function MenuButton() {
     return (
         <div className="cursor-pointer xl:hidden">
             <a onClick={!isMenuOpen ? openMenu : undefined}>
-                <IconMenu className="text-[var(--primary)] hover:text-[var(--accent)] lg:w-[30px] " />
+                <IconMenu className="text-[var(--primary)] hover:text-[var(--accent)] w-[30px] " />
             </a>
         </div>
     );

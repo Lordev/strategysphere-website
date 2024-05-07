@@ -1,56 +1,42 @@
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
-import { useState, useCallback } from "react";
+"use client";
 
-interface MapType {
-    // Define the properties of your map object here
-    // For example:
-    lat: number;
-    lng: number;
-    zoom: number;
-}
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
-const containerStyle = {
-    width: "400px",
-    height: "400px",
-};
-
-const center = {
-    lat: -3.745,
-    lng: -38.523,
-};
+const customMarkerIcon = L.icon({
+    iconUrl: markerIcon.src,
+    iconRetinaUrl: markerIcon2x.src,
+    shadowUrl: markerShadow.src,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    tooltipAnchor: [16, -28],
+    shadowSize: [41, 41],
+});
 
 export default function Map() {
-    const { isLoaded } = useJsApiLoader({
-        id: "google-map-script",
-        googleMapsApiKey: "YOUR_API_KEY",
-    });
-
-    const [map, setMap] = useState<MapType | null>(null);
-
-    const onLoad = useCallback(function callback(map: any) {
-        // This is just an example of getting and using the map instance!!! don't just blindly copy!
-        const bounds = new window.google.maps.LatLngBounds(center);
-        map.fitBounds(bounds);
-
-        setMap(map);
-    }, []);
-
-    const onUnmount = useCallback(function callback(map: any) {
-        setMap(null);
-    }, []);
-
-    return isLoaded ? (
-        <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={10}
-            onLoad={onLoad}
-            onUnmount={onUnmount}
+    return (
+        <MapContainer
+            center={[52.36533, 4.90782]}
+            zoom={11}
+            scrollWheelZoom={false}
+            className="h-full w-full object-cover z-20 max-lg:min-h-[50vh]"
         >
-            {/* Child components, such as markers, info windows, etc. */}
-            <></>
-        </GoogleMap>
-    ) : (
-        <></>
+            <TileLayer
+                attribution='&copy; <a href="https://www.thunderforest.com/">Thunderforest</a> contributors'
+                url="https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=0b0d047b403f4955a8bc6e9b91aa3cc2"
+            />
+            <Marker position={[52.36533, 4.90782]} icon={customMarkerIcon}>
+                <Popup>
+                    Our Main Office
+                    <br />
+                    Keizersgracht 456
+                </Popup>
+            </Marker>
+        </MapContainer>
     );
 }

@@ -3,23 +3,25 @@ import Image from "next/image";
 import StraightAnglePieChart from "@/components/StraightAnglePieChart";
 import QuoteSlider from "@/components/QuoteSlider";
 import Button from "@/components/Button";
-import AnimatedCounter from "@/components/Counter";
-import FadeInAnimation from "@/components/FadeInAnimation";
-import ParallaxSection from "@/components/ParallaxSection";
+import Counter from "@/components/CountUp";
+import OpacityAnimation from "@/components/animation/OpacityAnimation";
+import KeyPoints from "@/components/KeyPoints";
+import FadeInAnimation from "@/components/animation/FadeInAnimation";
 import FadeWrapper from "@/components/FadeWrapper";
+import ServiceCards from "@/components/ServiceCards.";
+import Parallax from "@/components/Parallax";
 
 export default function Home() {
     return (
         <div className="overflow-hidden">
             <Hero />
             <FadeInAnimation>
-                <section className="bg-foreground text-primary py-20 ">
+                <section className="bg-zinc-200 text-primary py-20 ">
                     <div className="container text-center">
                         <div className="mx-auto max-w-[450px]">
                             <h6>We deliver sublime services</h6>
                             <h1>
-                                Trusted Partner of <AnimatedCounter countLimit={580} />{" "}
-                                Clients
+                                Trusted Partner of <Counter endtime={200} />+ Clients
                             </h1>
                             <p className="mx-auto">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -139,7 +141,7 @@ export default function Home() {
                 <section className="h-full container py-20 xl:py-40 ">
                     <div className="text-center xl:mb-40 mb-12 mx-auto max-w-[800px]">
                         <h6>Financial reports</h6>
-                        <h1>Expert business insights</h1>
+                        <h2>Expert business insights</h2>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                             ducimus modi blanditiis ab, quas deserunt nulla officiis
@@ -182,7 +184,7 @@ export default function Home() {
                 </section>
             </FadeInAnimation>
             <FadeInAnimation>
-                <section className="h-full relative  before:bg-abstract before:absolute before:bg-cover before:h-full before:w-1/2 before:bg-no-repeat before:left-1/2 before:-z-20 before:opacity-5 ">
+                <section className="h-full relative  before:bg-earth before:absolute before:bg-cover before:h-full before:w-full before:bg-no-repeat before:left-0 before:-z-20 before:opacity-50">
                     <div className="gap-16 grid xl:grid-cols-2 xl:py-40 py-20">
                         <div className="grid items-center  w-full   mx-auto ">
                             <div className="max-w-[900px] xl:ml-auto max-xl:text-center max-xl:px-8 xl:pl-8 mx-auto">
@@ -214,17 +216,141 @@ export default function Home() {
                 </section>
             </FadeInAnimation>
             <FadeInAnimation>
+                <section className="py-40 bg-zinc-200">
+                    <div className="text-center xl:mb-40 mb-12 mx-auto max-w-[800px] text-primary">
+                        <h6>Financial reports</h6>
+                        <h2>Expert business insights</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+                            ducimus modi blanditiis ab, quas deserunt nulla officiis
+                            cupiditate veritatis, illo assumenda veniam? Odit voluptates
+                            voluptas vero obcaecati impedit! Amet, dignissimos.
+                        </p>
+                    </div>
+                    <div className="flex flex-wrap justify-center gap-8">
+                        <ServiceCards />
+                    </div>
+                </section>
+            </FadeInAnimation>
+            <OpacityAnimation>
                 <section>
-                    <ParallaxSection />
+                    <Parallax
+                        bgImage="/office-buildings.jpg"
+                        bgImageAlt="office buildings"
+                        strength={300}
+                        bgClassName="object-cover"
+                    >
+                        <div className="py-20 sm:py-40 container">
+                            <div className="flex flex-col gap-y-4 justify-center text-center">
+                                <h6>Key Features</h6>
+                                <h2 className="text-[#fff]">Grow in various ways</h2>
+                            </div>
+
+                            <div className="col-start-2 col-span-3 sm:grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3  gap-x-2 sm:gap-y-20 opacity-90 sm:mt-40 mt-20 *:mb-8 gap-y-2 max-w-screen-xl mx-auto">
+                                <FadeInAnimation>
+                                    <KeyPoints
+                                        image="/promotion-application.png"
+                                        title="Strategy Consulting"
+                                        content="Tailored strategies for market success."
+                                    />
+                                </FadeInAnimation>
+                                <FadeInAnimation>
+                                    <KeyPoints
+                                        image="/workflow.png"
+                                        title="Solutions Provider"
+                                        content="Innovative solutions for your challenges."
+                                    />
+                                </FadeInAnimation>
+
+                                <FadeInAnimation>
+                                    <KeyPoints
+                                        image="/community.png"
+                                        title="Advisory Services"
+                                        content="Expert guidance for informed decisions."
+                                    />
+                                </FadeInAnimation>
+
+                                <FadeInAnimation>
+                                    <KeyPoints
+                                        image="/meeting.png"
+                                        title="Innovation Hub"
+                                        content="Fueling creativity and breakthroughs."
+                                    />
+                                </FadeInAnimation>
+
+                                <FadeInAnimation>
+                                    <KeyPoints
+                                        image="/vision.png"
+                                        title="Growth Partners"
+                                        content="Your allies in achieving growth goals."
+                                    />
+                                </FadeInAnimation>
+
+                                <FadeInAnimation>
+                                    <KeyPoints
+                                        image="/data.png"
+                                        title="Optimization Experts"
+                                        content="Maximizing efficiency and performance."
+                                    />
+                                </FadeInAnimation>
+
+                                <FadeInAnimation>
+                                    <KeyPoints
+                                        image="/briefcase.png"
+                                        title="Transformational Consulting"
+                                        content="Driving transformative change."
+                                    />
+                                </FadeInAnimation>
+
+                                <FadeInAnimation>
+                                    <KeyPoints
+                                        image="/brainstorming.png"
+                                        title="Excellence Delivery"
+                                        content="Delivering excellence every step of the way."
+                                    />
+                                </FadeInAnimation>
+
+                                <FadeInAnimation>
+                                    <KeyPoints
+                                        image="/consultation.png"
+                                        title="Insightful Analysis"
+                                        content="Insights to inform strategic decisions."
+                                    />
+                                </FadeInAnimation>
+
+                                <FadeInAnimation>
+                                    <KeyPoints
+                                        image="/data-modelling.png"
+                                        title="Impactful Solutions"
+                                        content="Solutions that make a difference."
+                                    />
+                                </FadeInAnimation>
+
+                                <FadeInAnimation>
+                                    <KeyPoints
+                                        image="/goal.png"
+                                        title="Performance Improvement"
+                                        content="Achieving peak performance."
+                                    />
+                                </FadeInAnimation>
+
+                                <FadeInAnimation>
+                                    <KeyPoints
+                                        image="/promotion.png"
+                                        title="Agile Consulting"
+                                        content="Adaptable solutions for changing landscapes."
+                                    />
+                                </FadeInAnimation>
+                            </div>
+                        </div>
+                    </Parallax>
                 </section>
-            </FadeInAnimation>
-            <FadeInAnimation>
-                <section className="bg-foreground py-8 text-end text-primary ">
-                    <h2 className="mr-16">
-                        Your company{`’`}s future with us, guaranteed success.
-                    </h2>
-                </section>
-            </FadeInAnimation>
+            </OpacityAnimation>
+            <section className="bg-zinc-200 py-8 text-end text-primary overflow-hidden">
+                <h2 className="md:mr-16 mr-8">
+                    Your company{`’`}s future with us, guaranteed success.
+                </h2>
+            </section>
         </div>
     );
 }

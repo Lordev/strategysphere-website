@@ -1,17 +1,20 @@
 import Image from "next/image";
 import CardEmployee from "@/components/CardEmployee";
 import CardEmployeeHover from "@/components/CardEmployeeHover";
+import Icon from "@/components/Iconify";
+import FadeInAnimation from "@/components/animation/FadeInAnimation";
+import OpacityAnimation from "@/components/animation/OpacityAnimation";
 
 export default function OurTeam() {
     return (
         <>
-            <div className="py-60 bg-team-banner bg-cover ">
-                <div className="text-primary max-lg:px-8 max-w-screen-lg mx-auto">
+            <section className="py-60 bg-team-banner bg-cover bg-top">
+                <div className="text-primary max-lg:px-8 max-w-screen-lg mx-auto ">
                     <h1>Our Team</h1>
-                    <h3>home - our team</h3>
+                    <h3 className="text-tertiary">home - our team</h3>
                 </div>
-            </div>
-            <div className="max-w-screen-3xl mx-auto px-8 3xl:px-0">
+            </section>
+            <section className="max-w-screen-3xl mx-auto px-8 3xl:px-0">
                 <div className="h-full col-start-2 lg:mt-40 mt-20">
                     <div className="border-l-accent border-l-2 sm:px-20 px-8 max-w-[900px]">
                         <h6>Management Consulting Group</h6>
@@ -21,9 +24,9 @@ export default function OurTeam() {
                         </h2>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="justify-center gap-8 lg:mt-40 mt-20 col-start-2 max-sm:px-8 grid xl:grid-cols-4 sm:grid-cols-2 ">
+            <section className="justify-center gap-8 lg:mt-40 mt-20 col-start-2 max-sm:px-8 grid xl:grid-cols-4 sm:grid-cols-2 ">
                 <CardEmployee
                     imgUrl="/office-worker-1.png"
                     name="John Doe"
@@ -44,8 +47,8 @@ export default function OurTeam() {
                     name="John Doe"
                     role="Technical Advisor"
                 />
-            </div>
-            <div className="max-w-screen-3xl mx-auto max-3xl:px-8">
+            </section>
+            <section className="max-w-screen-3xl mx-auto max-3xl:px-8">
                 <div className="h-full col-start-2 lg:mt-40 mt-20">
                     <div className="md:w-1/2">
                         <h6>Management Consulting Group</h6>
@@ -54,7 +57,7 @@ export default function OurTeam() {
                         </h2>
                     </div>
                     <div className="md:grid-cols-2 grid gap-x-16 mt-4">
-                        <p>
+                        <p className="text-muted">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
                             voluptatibus fuga consequuntur dicta ipsum error doloremque
                             saepe ea inventore id nulla quidem cupiditate itaque ex culpa
@@ -77,7 +80,7 @@ export default function OurTeam() {
                             voluptatem!
                         </p>
                         <div>
-                            <p>
+                            <p className="text-muted">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                 Possimus magni sed aperiam dolorem excepturi. Ex, quisquam
                                 minima ab rerum vel distinctio, voluptatem nam repudiandae
@@ -97,8 +100,8 @@ export default function OurTeam() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="lg:mt-40 mt-20 xl:grid-cols-4 grid-cols-2 grid gap-8 justify-center">
+            </section>
+            <section className="lg:mt-40 mt-20 xl:grid-cols-4 grid-cols-2 grid gap-8 justify-center">
                 <CardEmployeeHover
                     img="/HRemployee-1.png"
                     name="Johh Doe"
@@ -139,84 +142,98 @@ export default function OurTeam() {
                     name="Johh Doe"
                     role="Manager"
                 />
-            </div>
-            <div className="lg:my-40 my-20 max-w-screen-3xl mx-auto max-3xl:px-8">
-                <div className="h-full col-start-2 ">
-                    <div className="max-w-4xl">
-                        <h6>Management Consulting Group</h6>
-                        <h2>
-                            Meet Our Exceptional Team: Driving Success with Talent and
-                            Dedication
-                        </h2>
+            </section>
+            <section className="lg:py-40 py-20 bg-primary">
+                <div className="max-w-screen-3xl mx-auto max-3xl:px-8 text-foreground">
+                    <div className="h-full col-start-2 ">
+                        <div className="max-w-4xl">
+                            <h6>Management Consulting Group</h6>
+                            <h2>
+                                Meet Our Exceptional Team: Driving Success with Talent and
+                                Dedication
+                            </h2>
+                        </div>
+                    </div>
+                    <div className="col-start-2 grid sm:grid-cols-2 mt-20 justify-center items-center lg:grid-cols-4 gap-8 ">
+                        <div>
+                            <Image
+                                width={60}
+                                height={60}
+                                src={"/5.png"}
+                                alt="portfolio image"
+                                className="opacity-60 mb-8"
+                            />
+                            <h4>
+                                Investments in startups and business are our speciality
+                            </h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Animi, dignissimos quas! Obcaecati dolorem assumenda
+                                facere dolore ipsa, eveniet reiciendis non aperiam, atque
+                                delectus, sint dolorum rem recusandae eius facilis.
+                                Voluptates? Consequatur, nobis optio.
+                            </p>
+                        </div>
+                        <div>
+                            <Image
+                                width={60}
+                                height={60}
+                                src={"/6.png"}
+                                alt="portfolio image"
+                                className="opacity-60 mb-8"
+                            />
+                            <h4>
+                                Investments in startups and business are our speciality
+                            </h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Animi, dignissimos quas! Obcaecati dolorem assumenda
+                                facere dolore ipsa, eveniet reiciendis non aperiam, atque
+                                delectus, sint dolorum rem recusandae eius facilis.
+                                Voluptates? Consequatur, nobis optio.
+                            </p>
+                        </div>
+                        <div>
+                            <Image
+                                width={60}
+                                height={60}
+                                src={"/7.png"}
+                                alt="portfolio image"
+                                className="opacity-60 mb-8"
+                            />
+                            <h4>
+                                Investments in startups and business are our speciality
+                            </h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Animi, dignissimos quas! Obcaecati dolorem assumenda
+                                facere dolore ipsa, eveniet reiciendis non aperiam, atque
+                                delectus, sint dolorum rem recusandae eius facilis.
+                                Voluptates? Consequatur, nobis optio.
+                            </p>
+                        </div>
+                        <div>
+                            <Image
+                                width={60}
+                                height={60}
+                                src={"/8.png"}
+                                alt="portfolio image"
+                                className="opacity-60 mb-8"
+                            />
+                            <h4>
+                                Investments in startups and business are our speciality
+                            </h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Animi, dignissimos quas! Obcaecati dolorem assumenda
+                                facere dolore ipsa, eveniet reiciendis non aperiam, atque
+                                delectus, sint dolorum rem recusandae eius facilis.
+                                Voluptates? Consequatur, nobis optio.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div className="col-start-2 grid sm:grid-cols-2 mt-20 justify-center items-center gap-12 lg:grid-cols-4 ">
-                    <div>
-                        <Image
-                            width={50}
-                            height={50}
-                            src={"/growth.png"}
-                            alt="portfolio image"
-                        />
-                        <h4>Investments in startups and business are our speciality</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Animi, dignissimos quas! Obcaecati dolorem assumenda facere
-                            dolore ipsa, eveniet reiciendis non aperiam, atque delectus,
-                            sint dolorum rem recusandae eius facilis. Voluptates?
-                            Consequatur, nobis optio.
-                        </p>
-                    </div>
-                    <div>
-                        <Image
-                            width={50}
-                            height={50}
-                            src={"/startup.png"}
-                            alt="portfolio image"
-                        />
-                        <h4>Investments in startups and business are our speciality</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Animi, dignissimos quas! Obcaecati dolorem assumenda facere
-                            dolore ipsa, eveniet reiciendis non aperiam, atque delectus,
-                            sint dolorum rem recusandae eius facilis. Voluptates?
-                            Consequatur, nobis optio.
-                        </p>
-                    </div>
-                    <div>
-                        <Image
-                            width={50}
-                            height={50}
-                            src={"/profits.png"}
-                            alt="portfolio image"
-                        />
-                        <h4>Investments in startups and business are our speciality</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Animi, dignissimos quas! Obcaecati dolorem assumenda facere
-                            dolore ipsa, eveniet reiciendis non aperiam, atque delectus,
-                            sint dolorum rem recusandae eius facilis. Voluptates?
-                            Consequatur, nobis optio.
-                        </p>
-                    </div>
-                    <div>
-                        <Image
-                            width={50}
-                            height={50}
-                            src={"/income-sources.png"}
-                            alt="portfolio image"
-                        />
-                        <h4>Investments in startups and business are our speciality</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Animi, dignissimos quas! Obcaecati dolorem assumenda facere
-                            dolore ipsa, eveniet reiciendis non aperiam, atque delectus,
-                            sint dolorum rem recusandae eius facilis. Voluptates?
-                            Consequatur, nobis optio.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            </section>
         </>
     );
 }

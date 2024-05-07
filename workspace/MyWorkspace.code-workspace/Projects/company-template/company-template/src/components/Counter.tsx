@@ -1,6 +1,6 @@
-'use client'
-
+"use client";
 import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 interface AnimatedCounter {
     countLimit: number;
@@ -8,18 +8,25 @@ interface AnimatedCounter {
 
 const AnimatedCounter = ({ countLimit }: AnimatedCounter) => {
     const [count, setCount] = useState(0);
+    const { ref, inView } = useInView();
 
     useEffect(() => {
-        const timeoutInterval = setTimeout(() => {
-            if (count < countLimit) {
-                setCount((prevCount) => prevCount + 1);
+        let timeoutInterval: NodeJS.Timeout | null = null;
+        if (inView) {
+            timeoutInterval = setTimeout(() => {
+                if (count < countLimit) {
+                    setCount((prevCount) => prevCount + 1);
+                }
+            }, 10);
+        }
+        return () => {
+            if (timeoutInterval) {
+                clearTimeout(timeoutInterval);
             }
-        }, 5);
+        };
+    }, [count, countLimit, inView]);
 
-        return () => clearTimeout(timeoutInterval);
-    }, [count, countLimit]);
-
-    return <>{count}</>;
+    return <span ref={ref}>{inView && count}</span>;
 };
 
 export default AnimatedCounter;

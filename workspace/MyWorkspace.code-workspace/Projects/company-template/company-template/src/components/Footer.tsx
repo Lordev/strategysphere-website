@@ -1,13 +1,14 @@
 import Button from "./Button";
 import Image from "next/image";
 import FooterLink from "./FooterLink";
+import { Input } from "./ui/input";
 
 export default function Footer() {
     return (
-        <footer className="bg-footer bg-cover lg:pt-40 pt-20 relative">
-            <div className=" before:bg-background before:opacity-[.97] before:absolute before:inset-0 before:h-full">
-                <div className="container lg:grid xl:grid-cols-2 gap-x-16 grid-cols-[20rem_1fr]">
-                    <div className="xl:w-1/2 flex flex-col gap-4 mb-16 xl:mb-0 lg:text-start items-center lg:items-start text-center">
+        <footer className="bg-footer bg-cover lg:pt-40 pt-20 relative z-40">
+            <div className="before:bg-background before:opacity-[.97] before:absolute before:inset-0 before:h-full">
+                <div className="container lg:grid xl:grid-cols-2 gap-x-16 grid-cols-[20rem_1fr] relative">
+                    <div className="xl:w-1/2 flex flex-col gap-4 mb-16 xl:mb-0 lg:text-start  lg:items-start ">
                         <Image
                             width={420}
                             height={76}
@@ -22,7 +23,7 @@ export default function Footer() {
                         </p>
                         <Button title="Contact us" />
                     </div>
-                    <div className="lg:grid lg:grid-cols-[1fr_1fr_2fr] gap-x-8 grid-cols-none *:mb-16 text-center lg:text-start">
+                    <div className="lg:grid lg:grid-cols-[1fr_1fr_2fr] gap-x-8 grid-cols-none *:mb-16 ">
                         <div>
                             <h5>Halstein</h5>
                             <ul className="*:mb-4 mt-8">
@@ -59,7 +60,15 @@ export default function Footer() {
                         </div>
                         <div>
                             <h5>Subscribe</h5>
-                            <input className="max-w-[500px] mt-8 w-full" />
+                            <form>
+                                <Input
+                                    autoComplete="email"
+                                    type="email"
+                                    className="lg:max-w-[300px] mt-8 w-full text-foreground"
+                                    required
+                                />
+                                <Button title="submit" />
+                            </form>
                         </div>
                     </div>
                 </div>

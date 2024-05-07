@@ -5,6 +5,7 @@ import { createContext, useContext, useState, PropsWithChildren, useEffect } fro
 export interface ScreenContextType {
     bigDisplay: boolean;
     smallDisplay: boolean;
+    tablet: boolean;
 }
 
 // Create the Context
@@ -23,12 +24,14 @@ export const useScreenBreakPoint = (): ScreenContextType => {
 export default function ScreenBreakPointProvider({ children }: PropsWithChildren) {
     const [bigDisplay, setBigDisplay] = useState(false);
     const [smallDisplay, setSmallDisplay] = useState(false);
+    const [tablet, setTablet] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
             const width = window.innerWidth;
             setBigDisplay(width < 1280);
             setSmallDisplay(width <= 1280);
+            setTablet(width <= 768);
         };
 
         handleResize();
@@ -43,6 +46,7 @@ export default function ScreenBreakPointProvider({ children }: PropsWithChildren
     const screenState: ScreenContextType = {
         bigDisplay,
         smallDisplay,
+        tablet,
     };
 
     return (

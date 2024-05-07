@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Icon from "./Icon";
 import { FaLinkedin, FaSquareTwitter } from "react-icons/fa6";
+import OpacityAnimation from "./animation/OpacityAnimation";
 
 interface CardEmployeeProps {
     imgUrl: string;
@@ -10,6 +11,7 @@ interface CardEmployeeProps {
 
 export default function CardEmployee({ imgUrl, name, role }: CardEmployeeProps) {
     return (
+        <OpacityAnimation>
         <div className="max-w-[1075px]">
             <Image
                 src={imgUrl}
@@ -35,5 +37,6 @@ export default function CardEmployee({ imgUrl, name, role }: CardEmployeeProps) 
                 </div>
             </div>
         </div>
+        </OpacityAnimation>
     );
 }
