@@ -6,12 +6,14 @@ import MenuButton from "./MenuButton";
 
 export default function Menu() {
     const pathName = usePathname();
+    const segments = pathName.split("/");
 
     const menuLink = [
-        { path: "/", name: "Home" },
-        { path: "/about", name: "About us" },
-        { path: "/team", name: "Our Team" },
-        { path: "/contact", name: "Contact Us" },
+        { name: "Home", url: `/${segments[1]}` },
+        { name: "About Us", url: `/${segments[1]}/about` },
+        { name: "Our Team", url: `/${segments[1]}/team` },
+        { name: "Blog", url: `/${segments[1]}/blog` },
+        { name: "Contact Us", url: `/${segments[1]}/contact` },
     ];
 
     return (
@@ -20,9 +22,9 @@ export default function Menu() {
                 {menuLink.map((item) => (
                     <div
                         key={item.name}
-                        className="text-sm font-[500] text-primary uppercase max-xl:hidden flex items-center gap-2"
+                        className="text-sm font-medium text-primary uppercase max-xl:hidden flex items-center gap-2"
                     >
-                        <MenuBarLink active={pathName === item.path} link={item.path}>
+                        <MenuBarLink active={pathName === item.url} link={item.url}>
                             {item.name}
                         </MenuBarLink>
                     </div>

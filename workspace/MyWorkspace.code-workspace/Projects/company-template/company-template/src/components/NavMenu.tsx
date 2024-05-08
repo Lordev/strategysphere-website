@@ -7,12 +7,14 @@ import NavMenuLink from "./NavMenuLink";
 export default function NavMenu() {
     const { isMenuOpen, closeMenu } = useMenu();
     const pathName = usePathname();
+    const segments = pathName.split("/");
 
     const menuLinks = [
-        { text: "Home", url: "/" },
-        { text: "About Us", url: "/about" },
-        { text: "Our Team", url: "/team" },
-        { text: "Contact Us", url: "/contact" },
+        { text: "Home", url: `/${segments[1]}` },
+        { text: "About Us", url: `/${segments[1]}/about` },
+        { text: "Our Team", url: `/${segments[1]}/team` },
+        { text: "Blog", url: `/${segments[1]}/blog` },
+        { text: "Contact Us", url: `/${segments[1]}/contact` },
     ];
 
     return (

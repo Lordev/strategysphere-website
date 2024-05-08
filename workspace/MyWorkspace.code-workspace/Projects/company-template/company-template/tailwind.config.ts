@@ -3,10 +3,10 @@ import type { Config } from "tailwindcss";
 const config = {
     darkMode: ["class"],
     content: [
-        "./pages/**/*.{ts,tsx}",
-        "./components/**/*.{ts,tsx}",
-        "./app/**/*.{ts,tsx}",
-        "./src/**/*.{ts,tsx}",
+        "./app/**/*.{js,ts,jsx,tsx,mdx}", // Note the addition of the
+        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     prefix: "",
     theme: {
@@ -45,7 +45,7 @@ const config = {
                 "hero-side": "url('/office-lowq.jpg')",
                 footer: "url('/skyline.jpg')",
                 "office-buildings":
-                    "radial-gradient( var(--background),  var(--background), var(--background)), url(/building-orange.jpg)",
+                    "radial-gradient( var(--background),  var(--background), var(--background)), url('/building-orange.jpg')",
                 counseling: "url('/meetings.jpg')",
                 earth: "url('/earth-left.png')",
                 abstract: "url('/abstract-pattern.png')",
@@ -142,7 +142,6 @@ const config = {
         require("tailwind-gradient-mask-image"),
         require("autoprefixer"),
         require("postcss-import"),
-        require("tailwindcss/nesting"),
         require("daisyui"),
         // Other plugins...
     ],
