@@ -32,7 +32,7 @@ export default function HeaderContainer({ children }: PropsWithChildren) {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, [currentScroll]);
+    }, [currentScroll]); // eslint-disable-line
 
     return (
         <div className="md:min-h-[86px] min-h-[64px]">

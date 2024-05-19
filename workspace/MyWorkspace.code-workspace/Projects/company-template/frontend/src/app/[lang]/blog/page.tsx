@@ -1,87 +1,158 @@
 "use client";
+import PostList from "@/components/PostList";
+import { sanityFetch } from "@/utils/sanity/SanityFetchClient";
+import BlogSelect from "@/components/Blogselect/BlogSelect";
+import NextButton from "@/components/NextButton";
 import { useState, useEffect, useCallback } from "react";
-import { fetchAPI } from "../utils/fetch-api";
+import { Category, Posts } from "@/types";
+import Skeleton from "@/components/Blogselect/Skeleton";
 
-import Loader from "../components/Loader";
-import PostList from "../components/PostList";
-import PageHeader from "../components/PageHeader";
+const POSTS_AMOUNT: number = 6;
 
-interface Meta {
-    pagination: {
-        start: number;
-        limit: number;
-        total: number;
-    };
+interface Data {
+    posts: Posts[];
+    categories: Category[];
 }
 
 export default function Profile() {
-    const [meta, setMeta] = useState<Meta | undefined>();
-    const [data, setData] = useState<any>([]);
+    const [fetchedData, setFetchedData] = useState<Posts[]>([]);
+    const [categoriesData, setCategoriesData] = useState<Category[]>([]);
+    const [startIndex, setStartIndex] = useState(0);
+    const [endIndex, setEndIndex] = useState(5);
+    const [loadMore, setLoadMore] = useState(false);
     const [isLoading, setLoading] = useState(true);
+    const [initialRender, setInitialRender] = useState(true);
 
-    const fetchData = useCallback(async (start: number, limit: number) => {
+    const fetchData = useCallback(async (startIndex: number, endIndex: number) => {
         setLoading(true);
         try {
-            const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
-            const path = `/articles`;
-            const urlParamsObject = {
-                sort: { createdAt: "desc" },
-                populate: {
-                    cover: { fields: ["url"] },
-                    category: { populate: "*" },
-                    authorsBio: {
-                        populate: "*",
+            const data = await sanityFetch<Posts[]>({
+                query: `*[_type == "post"]  | order(publishedAt desc)
+                {
+                _id,
+                title,
+                publishedAt,
+                "mainImage" : mainImage.asset->url,
+                
+                "author" : author->{
+                name,
+                "bio" : bio[0].children[0].text,
+                "image" : image.asset->url,
+                },
+                "categories": categories[0]->{
+                    title,
+                    "slug" : slug.current
+                },
+                "slug" : slug.current,
+                description
+                } [${startIndex}..${endIndex}]`,
+
+                tags: ["blog", "page"],
+            });
+
+            const categoriesResponse = await sanityFetch<Category[]>({
+                query: `*[_type == "post"] | order(publishedAt desc)
+                    {
+                    "categories": categories[0]->{
+                    title,
+                    "slug" : slug.current
                     },
-                },
-                pagination: {
-                    start: start,
-                    limit: limit,
-                },
-            };
-            const options = { headers: { Authorization: `Bearer ${token}` } };
-            const responseData = await fetchAPI(path, urlParamsObject, options);
-            console.log("Fetched data:", responseData);
-            if (start === 0) {
-                setData(responseData.data);
+                }`,
+                tags: ["article-sidebar", "page"],
+            });
+
+            const futureData = await sanityFetch<Posts[]>({
+                query: `*[_type == "post"]  | order(publishedAt desc) [${endIndex + 1}..${endIndex + 1}]`,
+                tags: ["blog", "page"],
+            });
+
+            if (!futureData || futureData.length === 0) {
+                setLoadMore(false);
             } else {
-                setData((prevData: any[]) => [...prevData, ...responseData.data]);
+                setLoadMore(true);
             }
 
-            setMeta(responseData.meta);
+            return {
+                posts: data,
+                categories: categoriesResponse,
+            };
         } catch (error) {
-            console.error(error);
+            return console.error(error);
         } finally {
             setLoading(false);
         }
     }, []);
 
-    function loadMorePosts(): void {
-        const nextPosts = meta!.pagination.start + meta!.pagination.limit;
-        fetchData(nextPosts, Number(process.env.NEXT_PUBLIC_PAGE_LIMIT));
+    useEffect(() => {
+        const fetchDataAndSetData = async () => {
+            try {
+                const { posts, categories } = (await fetchData(
+                    startIndex,
+                    endIndex
+                )) as Data;
+                if (posts && posts.length > 0) {
+                    setFetchedData(posts);
+                    setCategoriesData(categories);
+                }
+            } catch (error) {
+                console.log(error);
+            } finally {
+                setInitialRender(false);
+            }
+        };
+
+        fetchDataAndSetData();
+
+        return () => {
+            setStartIndex((prev) => prev + POSTS_AMOUNT);
+            setEndIndex((prev) => prev + POSTS_AMOUNT);
+        };
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+    if (!fetchedData) return;
+
+    async function loadMorePosts() {
+        try {
+            const { posts } = (await fetchData(startIndex, endIndex)) as Data;
+
+            if (!posts || posts.length === 0) throw new Error("No more data to fetch");
+
+            setFetchedData((prev) => [...prev, ...posts]);
+
+            if (loadMore) {
+                setStartIndex((prev) => prev + POSTS_AMOUNT);
+                setEndIndex((prev) => prev + POSTS_AMOUNT);
+            }
+        } catch (error) {
+            console.log(error);
+        }
     }
 
-    useEffect(() => {
-        fetchData(0, Number(process.env.NEXT_PUBLIC_PAGE_LIMIT));
-    }, [fetchData]);
-
-    if (isLoading) return <Loader />;
     return (
-        <div>
-            <PageHeader heading="Our Blog" text="Checkout Something Cool" />
-            <PostList data={data}>
-                {meta!.pagination.start + meta!.pagination.limit <
-                    meta!.pagination.total && (
-                    <div className="flex justify-center">
-                        <button
-                            type="button"
-                            className="px-6 py-3 text-sm rounded-lg hover:underline dark:bg-gray-900 dark:text-gray-400"
-                            onClick={loadMorePosts}
-                        >
-                            Load more posts...
-                        </button>
+        <>
+            <div className="bg-black/10 ">
+                <PostList data={fetchedData}>
+                    <div className="flex justify-center py-5">
+                        {loadMore && (
+                            <NextButton
+                                type="button"
+                                label="Load more Posts.."
+                                onClick={loadMorePosts}
+                            />
+                        )}
+                        {isLoading &&
+                            (console.log("loading"),
+                            (<span className="loading loading-dots loading-lg"></span>))}
                     </div>
+                </PostList>
+            </div>
+            <aside>
+                {isLoading && initialRender ? (
+                    <Skeleton />
+                ) : (
+                    <BlogSelect data={fetchedData} categories={categoriesData} />
                 )}
-            </PostList>
-        </div>
+            </aside>
+        </>
     );
 }

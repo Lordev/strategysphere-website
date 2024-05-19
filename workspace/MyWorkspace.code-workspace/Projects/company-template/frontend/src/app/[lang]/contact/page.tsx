@@ -1,21 +1,17 @@
 import ContactForm from "@/components/ContactForm";
 import Map from "@/components/Map";
+import PageHeader from "@/components/PageHeader";
 import Parallax from "@/components/Parallax";
 
 export default function Contact() {
     return (
         <main>
-            <section className="py-60 bg-contact-me-banner bg-cover bg-right-bottom">
-                <div className="text-white max-lg:px-8 max-w-screen-lg mx-auto">
-                    <div className="w-fit">
-                        <h1>Contact us</h1>
-                        <h3>home - contact us</h3>
-                    </div>
-                </div>
+            <section className="py-40 bg-contact-me-banner bg-cover bg-top text-foreground">
+                <PageHeader heading="Contact us" />
             </section>
             <section>
                 <div className="lg:grid lg:grid-cols-[1fr_repeat(2,minmax(0,_900px))_1fr] gap-8 ">
-                    <div className="max-w-[900px] max-lg:mx-auto py-40 col-start-2 ">
+                    <div className="max-w-[900px] max-lg:mx-auto xl:py-40 py-20 col-start-2 max-lg:text-center px-2">
                         <h6>SUBMIT INQUIRY</h6>
                         <h2 className="mb-16">Interested in working together?</h2>
                         <ContactForm />
@@ -32,10 +28,10 @@ export default function Contact() {
                 strength={300}
                 bgClassName="object-cover"
             >
-                <div className="container py-40">
+                <div className="lg:container py-20 md:py-40 max-lg:px-4">
                     <h6>OUR LOCATIONS</h6>
                     <h2 className="mb-16">Explore Our Offices Worldwide</h2>
-                    <div className="grid grid-cols-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 ">
                         <div>
                             <h5>Paris</h5>
                             <address>
@@ -72,9 +68,7 @@ export default function Contact() {
                 </div>
             </Parallax>
             <section className="bg-foreground py-8 text-center text-primary ">
-                <h2 className="mr-16">
-                    Follow us and receive latest researches, insights & news.
-                </h2>
+                <h2>Follow us and receive latest researches, insights & news.</h2>
             </section>
         </main>
     );

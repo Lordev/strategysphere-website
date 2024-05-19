@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NavMenu from "@/components/NavMenu";
+import { i18n } from "i18n-config";
 
 interface RootLayoutProps {
     children: React.ReactNode;
@@ -34,4 +35,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </body>
         </html>
     );
+}
+
+export async function generateStaticParams() {
+    return i18n.locales.map((locale) => ({ lang: locale }));
 }

@@ -24,7 +24,14 @@ export default function Menu() {
                         key={item.name}
                         className="text-sm font-medium text-primary uppercase max-xl:hidden flex items-center gap-2"
                     >
-                        <MenuBarLink active={pathName === item.url} link={item.url}>
+                        <MenuBarLink
+                            active={
+                                (item.name === "Home" &&
+                                    pathName === `/${segments[1]}`) ||
+                                (pathName.includes(item.url) && item.name !== "Home")
+                            }
+                            link={item.url}
+                        >
                             {item.name}
                         </MenuBarLink>
                     </div>

@@ -12,7 +12,6 @@ const MyApp: React.FC<{ Component: React.ComponentType<any>; pageProps: any }> =
 
     useEffect(() => {
         const handleRouteChange = (url: string) => {
-            console.log("Route changed to:", url);
             // Your custom logic for route change tracking goes here
         };
 

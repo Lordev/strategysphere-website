@@ -9,7 +9,6 @@ import "swiper/css/scrollbar";
 export default function QuoteSliderTwo() {
     const buttonStyling =
         "text-white w-10 h-10 absolute cursor-pointer block transition-transform duration-2500";
-
     const slidesStyling = "md:text-3xl sm:text-2xl text-lg pb-32";
 
     return (
@@ -25,8 +24,6 @@ export default function QuoteSliderTwo() {
             }}
             // pagination={{ clickable: true }}
             // scrollbar={{ draggable: true }}
-            onSwiper={(swiper: any) => console.log(swiper)}
-            onSlideChange={() => console.log("slide change")}
             className="relative max-w-5xl"
             id="quote-swiper2"
         >

@@ -11,8 +11,8 @@ import HeroSlider from "./HeroSlider";
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden 2xl:h-[calc(100vh-96px)] md:h-[calc(200vh-98px)] h-[calc(200vh-64px)]">
-            <div className="bg-hero-buildings 2xl:absolute 2xl:bottom-0 2xl:w-1/2 2xl:min-w-[50rem] 2xl:left-0 bg-cover w-full 2xl:top-0 md:h-[calc(100vh-98px)] h-[calc(100vh-64px)] px-4">
+        <section className="relative overflow-hidden 2xl:h-[calc(100vh-96px)] md:h-[calc(200vh-96px)] h-[calc(200vh-64px)]">
+            <div className="bg-hero-buildings 2xl:absolute 2xl:bottom-0 2xl:w-1/2 2xl:min-w-[50rem] 2xl:left-0 bg-cover w-full 2xl:top-0 md:h-[calc(100vh-96px)] h-[calc(100vh-64px)] px-4">
                 <div className="flex flex-col items-center  gap-20 text-center py-8 h-full relative justify-center">
                     <div className="w-full mx-auto 2xl:mx-0">
                         <h6>We deliver sublime services</h6>
@@ -34,7 +34,7 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-            <div className="2xl:absolute 2xl:right-0 2xl:top-0 2xl:w-1/2 overflow-hidden 2xl:h-[calc(100vh-98px)] h-screen w-full z-0">
+            <div className="2xl:absolute 2xl:right-0 2xl:top-0 2xl:w-1/2 overflow-hidden 2xl:h-[calc(100vh-96px)] h-screen w-full z-0">
                 <HeroSlider />
             </div>
         </section>

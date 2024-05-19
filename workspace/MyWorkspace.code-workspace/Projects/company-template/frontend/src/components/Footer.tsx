@@ -5,9 +5,9 @@ import { Input } from "./ui/input";
 
 export default function Footer() {
     return (
-        <footer className="bg-footer bg-cover lg:pt-40 pt-20 relative z-40">
-            <div className="before:bg-background before:opacity-[.97] before:absolute before:inset-0 before:h-full">
-                <div className="container lg:grid xl:grid-cols-2 gap-x-16 grid-cols-[20rem_1fr] relative">
+        <footer className="bg-footer bg-cover xl:pt-40 pt-20 relative z-40">
+            <div className="before:bg-background before:opacity-[.97] before:absolute before:-z-10 before:inset-0 before:h-full">
+                <div className="lg:container lg:grid max-lg:px-4 xl:grid-cols-2 gap-x-16 grid-cols-[20rem_1fr] relative">
                     <div className="xl:w-1/2 flex flex-col gap-4 mb-16 xl:mb-0 lg:text-start  lg:items-start ">
                         <Image
                             width={420}
@@ -72,9 +72,11 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="text-end mt-20">
-                    <p className="text-red-100 pr-8">Copyright by John Doe &copy; 2024</p>
-                </div>
+            </div>
+            <div className="text-end mt-20">
+                <p className="pr-8 text-foreground">
+                    Copyright by John Doe &copy; {new Date().getFullYear()}{" "}
+                </p>
             </div>
         </footer>
     );

@@ -13,7 +13,7 @@ export default function VideoPlayer() {
             setIsPlaying(true);
         } else {
             videoRef.current?.pause();
-            setIsPlaying(false);
+        setIsPlaying(false);
         }
     };
 

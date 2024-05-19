@@ -10,7 +10,6 @@ import FadeInAnimation from "@/components/animation/FadeInAnimation";
 import FadeWrapper from "@/components/FadeWrapper";
 import ServiceCards from "@/components/ServiceCards.";
 import Parallax from "@/components/Parallax";
-import NavMenu from "@/components/NavMenu";
 
 export default function Home() {
     return (
@@ -246,7 +245,6 @@ export default function Home() {
                                 <h6>Key Features</h6>
                                 <h2 className="text-[#fff]">Grow in various ways</h2>
                             </div>
-
                             <div className="col-start-2 col-span-3 sm:grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3  gap-x-2 sm:gap-y-20 opacity-90 sm:mt-40 mt-20 *:mb-8 gap-y-2 max-w-screen-xl mx-auto">
                                 <FadeInAnimation>
                                     <KeyPoints
@@ -262,7 +260,6 @@ export default function Home() {
                                         content="Innovative solutions for your challenges."
                                     />
                                 </FadeInAnimation>
-
                                 <FadeInAnimation>
                                     <KeyPoints
                                         image="/community.png"
@@ -270,7 +267,6 @@ export default function Home() {
                                         content="Expert guidance for informed decisions."
                                     />
                                 </FadeInAnimation>
-
                                 <FadeInAnimation>
                                     <KeyPoints
                                         image="/meeting.png"
@@ -278,7 +274,6 @@ export default function Home() {
                                         content="Fueling creativity and breakthroughs."
                                     />
                                 </FadeInAnimation>
-
                                 <FadeInAnimation>
                                     <KeyPoints
                                         image="/vision.png"
@@ -286,7 +281,6 @@ export default function Home() {
                                         content="Your allies in achieving growth goals."
                                     />
                                 </FadeInAnimation>
-
                                 <FadeInAnimation>
                                     <KeyPoints
                                         image="/data.png"
@@ -294,7 +288,6 @@ export default function Home() {
                                         content="Maximizing efficiency and performance."
                                     />
                                 </FadeInAnimation>
-
                                 <FadeInAnimation>
                                     <KeyPoints
                                         image="/briefcase.png"
@@ -302,7 +295,6 @@ export default function Home() {
                                         content="Driving transformative change."
                                     />
                                 </FadeInAnimation>
-
                                 <FadeInAnimation>
                                     <KeyPoints
                                         image="/brainstorming.png"
@@ -310,7 +302,6 @@ export default function Home() {
                                         content="Delivering excellence every step of the way."
                                     />
                                 </FadeInAnimation>
-
                                 <FadeInAnimation>
                                     <KeyPoints
                                         image="/consultation.png"
@@ -318,7 +309,6 @@ export default function Home() {
                                         content="Insights to inform strategic decisions."
                                     />
                                 </FadeInAnimation>
-
                                 <FadeInAnimation>
                                     <KeyPoints
                                         image="/data-modelling.png"
@@ -326,7 +316,6 @@ export default function Home() {
                                         content="Solutions that make a difference."
                                     />
                                 </FadeInAnimation>
-
                                 <FadeInAnimation>
                                     <KeyPoints
                                         image="/goal.png"
@@ -334,7 +323,6 @@ export default function Home() {
                                         content="Achieving peak performance."
                                     />
                                 </FadeInAnimation>
-
                                 <FadeInAnimation>
                                     <KeyPoints
                                         image="/promotion.png"

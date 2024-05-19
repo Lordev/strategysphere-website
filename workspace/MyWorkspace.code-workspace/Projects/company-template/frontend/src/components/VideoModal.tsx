@@ -2,6 +2,8 @@
 import { useState, useRef } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
+import videoPreview from "../../public/video-preview.png";
+import Loader from "./Loader";
 
 export default function VideoModal({}) {
     const [open, setOpen] = useState(false);
@@ -17,12 +19,18 @@ export default function VideoModal({}) {
 
     return (
         <div className="relative">
-            <div className="cursor-pointer h-[75vh]" onClick={() => playVideo()}>
+            <div
+                className="cursor-pointer relative overflow-hidden max-h-[75vh]"
+                onClick={() => playVideo()}
+            >
                 <Image
-                    src={"/hero-right.jpg"}
+                    src={videoPreview}
                     alt="video player image"
-                    style={{ objectFit: "cover" }}
-                    fill={true}
+                    style={{
+                        width: "100%",
+                        height: "auto",
+                    }}
+                    sizes="100vw"
                 />
 
                 <svg

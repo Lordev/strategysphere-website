@@ -1,5 +1,6 @@
 import FadeWrapper from "@/components/FadeWrapper";
 import LineChart from "@/components/LineChart";
+import PageHeader from "@/components/PageHeader";
 import QuoteSliderTwo from "@/components/QuoteSliderTwo";
 import VideoModal from "@/components/VideoModal";
 import Image from "next/image";
@@ -7,11 +8,8 @@ import Image from "next/image";
 export default function About() {
     return (
         <main className="overflow-hidden">
-            <section className="py-60 bg-about-us-banner bg-cover bg-center">
-                <div className="text-primary px-8 max-w-screen-lg lg:px-0 mx-auto">
-                    <h1>About Us</h1>
-                    <h3 className="text-accent">home - About Us</h3>
-                </div>
+            <section className="py-40 bg-about-us-banner bg-cover bg-center text-primary">
+                <PageHeader heading="About us" />
             </section>
             <section className="max-w-screen-3xl mx-auto px-8 3xl:px-0">
                 <div className="h-full col-start-2 mt-40">
@@ -161,7 +159,7 @@ export default function About() {
                     </div>
                 </div>
             </section>
-            <section className="md:grid md:grid-cols-[minmax(360px,1fr)_3fr] ">
+            <section className="md:grid md:grid-cols-[minmax(360px,1fr)_3fr]">
                 <div className="relative group overflow-hidden h-60 md:h-full flex items-center">
                     <Image
                         src={"/buildings-blue-filter.png"}
@@ -182,7 +180,7 @@ export default function About() {
                 {/* <VideoPlayer /> */}
             </section>
             <section className="my-40">
-                <div className="grid grid-cols-2 gap-16 py-2">
+                <div className="grid lg:grid-cols-2 gap-16 py-2">
                     <div className="relative">
                         <FadeWrapper fadeProps={{ direction: "left", triggerOnce: true }}>
                             <Image

@@ -1,17 +1,15 @@
 import Image from "next/image";
 import CardEmployee from "@/components/CardEmployee";
 import CardEmployeeHover from "@/components/CardEmployeeHover";
+import PageHeader from "@/components/PageHeader";
 
 export default function OurTeam() {
     return (
         <>
-            <section className="py-60 bg-team-banner bg-cover bg-top">
-                <div className="text-primary max-lg:px-8 max-w-screen-lg mx-auto ">
-                    <h1>Our Team</h1>
-                    <h3 className="text-tertiary">home - our team</h3>
-                </div>
+            <section className="py-40 bg-team-banner bg-cover bg-top text-primary">
+                <PageHeader heading="Our Team" />
             </section>
-            <section className="max-w-screen-3xl mx-auto px-8 3xl:px-0">
+            <section className="max-w-screen-3xl mx-auto px-4 3xl:px-0">
                 <div className="h-full col-start-2 lg:mt-40 mt-20">
                     <div className="border-l-accent border-l-2 sm:px-20 px-8 max-w-[900px]">
                         <h6>Management Consulting Group</h6>
@@ -23,7 +21,7 @@ export default function OurTeam() {
                 </div>
             </section>
 
-            <section className="justify-center gap-8 lg:mt-40 mt-20 col-start-2 max-sm:px-8 grid xl:grid-cols-4 sm:grid-cols-2 ">
+            <section className="justify-center gap-8 lg:mt-40 mt-20 col-start-2  grid xl:grid-cols-4 sm:grid-cols-2 ">
                 <CardEmployee
                     imgUrl="/office-worker-1.png"
                     name="John Doe"
@@ -45,7 +43,7 @@ export default function OurTeam() {
                     role="Technical Advisor"
                 />
             </section>
-            <section className="max-w-screen-3xl mx-auto max-3xl:px-8">
+            <section className="max-w-screen-3xl mx-auto max-3xl:px-4">
                 <div className="h-full col-start-2 lg:mt-40 mt-20">
                     <div className="md:w-1/2">
                         <h6>Management Consulting Group</h6>
@@ -141,7 +139,7 @@ export default function OurTeam() {
                 />
             </section>
             <section className="lg:py-40 py-20 bg-primary">
-                <div className="max-w-screen-3xl mx-auto max-3xl:px-8 text-foreground">
+                <div className="max-w-screen-3xl mx-auto max-3xl:px-4 text-foreground">
                     <div className="h-full col-start-2 ">
                         <div className="max-w-4xl">
                             <h6>Management Consulting Group</h6>

@@ -25,30 +25,13 @@ export function middleware(request: NextRequest) {
 
     // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
     // // If you have one
-    if (
-        [
-            "/hero-left.jpg",
-            "/office-lowq.jpg",
-            "/skyline.jpg",
-            "/building-orange.jpg",
-            "/meetings.jpg",
-            "/earth-left.png",
-            "/abstract-pattern.png",
-            "/banner-employee.png",
-            "/banner-contact-us.png",
-            "/hero-right.jpg",
-            "/background-menu-dark.png",
-            "/office-buildings.jpg",
-            "/hero-right-2.jpg",
-            "/hero-right-1.jpg",
-            "/banner-about-us.jpg",
-            "/banner-employee.png",
-            "/banner-contact-us.png",
-            "/offices-contact.png", // Add other files in `public` to ignore
-        ].includes(pathname) ||
-        pathname.startsWith("/public/")
-    )
-        return;
+    const ignoredExtensions = [".jpg", ".png", ".mp4", ".svg"];
+
+    // Ignore requests to files with the specified extensions in the public directory
+    if (ignoredExtensions.some((extension) => pathname.endsWith(extension))) {
+        return NextResponse.next(); // Bypass middleware for ignored files
+    }
+
     // Check if there is any supported locale in the pathname
     const pathnameIsMissingLocale = i18n.locales.every(
         (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`

@@ -26,8 +26,6 @@ export default function QuoteSlider() {
             }}
             // pagination={{ clickable: true }}
             // scrollbar={{ draggable: true }}
-            onSwiper={(swiper: any) => console.log(swiper)}
-            onSlideChange={() => console.log("slide change")}
             className="relative"
             id="quote-swiper"
         >
