@@ -35,7 +35,7 @@ export default function QuoteSliderTwo() {
 			</SwiperSlide>
 			<SwiperSlide className="custom-slide text-center">
 				<p className={slidesStyling}>
-					{'"'}The team's expertise in market analysis provided us
+					{'"'}The team{"'"}s expertise in market analysis provided us
 					with critical insights, leading to a successful product
 					launch. Exceptional service and results!{'"'}
 				</p>
@@ -44,7 +44,7 @@ export default function QuoteSliderTwo() {
 			<SwiperSlide className="custom-slide text-center">
 				<p className={slidesStyling}>
 					{'"'}Their strategic planning and financial advice have been
-					instrumental in our growth. We've seen a significant
+					instrumental in our growth. We{"'"}ve seen a significant
 					improvement in our bottom line.{'"'}
 				</p>
 				<h6>FINANCE MANAGER JOHN DOE</h6>

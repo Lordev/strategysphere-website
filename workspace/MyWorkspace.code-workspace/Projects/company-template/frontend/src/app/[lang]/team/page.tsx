@@ -80,7 +80,7 @@ export default function OurTeam() {
 								optimization. We understand that each business
 								is unique, which is why we offer personalized
 								consulting services to meet specific needs.
-								Whether you're looking to expand your market
+								Whether you{"'"}re looking to expand your market
 								presence, improve financial performance, or
 								streamline operations, our consultants are here
 								to help. We are committed to delivering

@@ -40,7 +40,7 @@ export default function QuoteSlider() {
 				<div className="pb-32">
 					{'"'}Working with this consultancy was a game-changer for
 					our startup. Expertise in financial planning and market
-					analysis was invaluable. We couldn't have achieved our goals
+					analysis was invaluable. We couldn{"'"}t have achieved our goals
 					without this guidance.{'"'}
 				</div>
 			</SwiperSlide>

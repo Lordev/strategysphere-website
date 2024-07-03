@@ -19,7 +19,7 @@ export default function Contact() {
 						<ContactForm />
 					</div>
 					<div className="col-start-3 col-span-full flex flex-col gap-4">
-						<Map />
+						{/* <Map /> */}
 					</div>
 				</div>
 			</section>

@@ -1,11 +1,11 @@
-import { Post as PostType } from "@/types/Post";
-import { sanityFetch } from "@/utils/sanity/SanityFetchServer";
-import Post from "@/components/Post";
+import { Post as PostType } from '@/types/Post';
+import { sanityFetch } from '@/utils/sanity/SanityFetchServer';
+import Post from '@/components/Post';
 
 async function fetchAPI(slug: string) {
-    try {
-        const data = await sanityFetch<PostType[]>({
-            query: `*[_type == "post"] | order(publishedAt desc)
+	try {
+		const data = await sanityFetch<PostType[]>({
+			query: `*[_type == "post"] | order(publishedAt desc)
             {
               _id,
               title,
@@ -22,6 +22,7 @@ async function fetchAPI(slug: string) {
                     },
                     _type == 'imageGallery' => {
                       "imageGallery": {
+                          _key,
                           images[] {
                           _key,
                           "url" : asset->url
@@ -67,52 +68,60 @@ async function fetchAPI(slug: string) {
               },
               "slug" : slug.current
             } [slug match "${slug}"]`,
-            tags: ["blog page", "page"],
-        });
+			tags: ['blog page', 'page'],
+		});
 
-        return data;
-    } catch (error) {
-        console.error(error);
-    }
+		return data;
+	} catch (error) {
+		console.error(error);
+	}
 }
 
-export async function generateStaticParams({ params }: { params: { slug: string } }) {
-    try {
-        const { slug } = params;
+export async function generateStaticParams({
+	params,
+}: {
+	params: { slug: string };
+}) {
+	try {
+		const { slug } = params;
 
-        // Ensure that slug is defined before fetching data
-        if (!slug) {
-            return [];
-        }
+		// Ensure that slug is defined before fetching data
+		if (!slug) {
+			return [];
+		}
 
-        const data = await fetchAPI(slug);
+		const data = await fetchAPI(slug);
 
-        // If no data is fetched or data array is empty, return an empty array
-        if (!data || data.length === 0) {
-            return [];
-        }
+		// If no data is fetched or data array is empty, return an empty array
+		if (!data || data.length === 0) {
+			return [];
+		}
 
-        // Map over the data and return an array of { slug, category }
-        return data.map((item) => ({
-            slug: item.slug,
-            categories: item.categories.slug,
-        }));
-    } catch (error) {
-        console.error("Error generating static params:", error);
-        // Return an empty array or handle the error as needed
-        return [];
-    }
+		// Map over the data and return an array of { slug, category }
+		return data.map(item => ({
+			slug: item.slug,
+			categories: item.categories.slug,
+		}));
+	} catch (error) {
+		console.error('Error generating static params:', error);
+		// Return an empty array or handle the error as needed
+		return [];
+	}
 }
-export default async function PostRoute({ params }: { params: { slug: string } }) {
-    const { slug } = params;
-    // console.log("slug param", slug);
+export default async function PostRoute({
+	params,
+}: {
+	params: { slug: string };
+}) {
+	const { slug } = params;
+	// console.log("slug param", slug);
 
-    const data = await fetchAPI(slug);
-    // console.log(data);
-    if (!data || data.length == 0) return <h2>no post found</h2>;
-    return (
-        <>
-            <Post data={data} />
-        </>
-    );
+	const data = await fetchAPI(slug);
+	// console.log(data);
+	if (!data || data.length == 0) return <h2>no post found</h2>;
+	return (
+		<>
+			<Post data={data} />
+		</>
+	);
 }
