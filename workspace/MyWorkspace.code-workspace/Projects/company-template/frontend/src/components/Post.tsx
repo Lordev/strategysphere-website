@@ -1,6 +1,6 @@
 import formatDate from "@/utils/formatDate";
 import Image from "next/image";
-import { Post } from "@/types/Post";
+import type { Post } from "@/types/Post";
 import ImageSlider from "./ImageSlider";
 import Quote from "./Quote";
 import VideoEmbed from "./VideoEmbed";

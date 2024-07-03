@@ -52,7 +52,7 @@ const StraightAnglePieChart = () => {
     }, [inView]);
 
     return (
-        <div ref={inViewRef} className="max-w-[500px] mx-auto w-full">
+        <div ref={inViewRef} className="max-w-[400px] mx-auto w-full">
             {chartData?.data && <Pie data={chartData.data} options={chartData.options} />}
         </div>
     );
