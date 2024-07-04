@@ -71,6 +71,8 @@ export default function Profile() {
 					setLoadMore(false);
 				} else {
 					setLoadMore(true);
+					setEndIndex(endIndex + POSTS_AMOUNT);
+					setStartIndex(startIndex + POSTS_AMOUNT);
 				}
 
 				return {
@@ -85,7 +87,6 @@ export default function Profile() {
 		},
 		[]
 	);
-
 	useEffect(() => {
 		const fetchDataAndSetData = async () => {
 			try {
@@ -103,13 +104,7 @@ export default function Profile() {
 				setInitialRender(false);
 			}
 		};
-
 		fetchDataAndSetData();
-
-		return () => {
-			setStartIndex(prev => prev + POSTS_AMOUNT);
-			setEndIndex(prev => prev + POSTS_AMOUNT);
-		};
 	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	if (!fetchedData) return;
@@ -120,13 +115,7 @@ export default function Profile() {
 
 			if (!posts || posts.length === 0)
 				throw new Error('No more data to fetch');
-
 			setFetchedData(prev => [...prev, ...posts]);
-
-			if (loadMore) {
-				setStartIndex(prev => prev + POSTS_AMOUNT);
-				setEndIndex(prev => prev + POSTS_AMOUNT);
-			}
 		} catch (error) {
 			console.log(error);
 		}
