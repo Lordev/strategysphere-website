@@ -1,5 +1,5 @@
 import ContactForm from '@/components/ContactForm';
-import Map from '@/components/Map';
+import GoogleMaps from '@/components/Map';
 import PageHeader from '@/components/PageHeader';
 import Parallax from '@/components/Parallax';
 
@@ -19,7 +19,7 @@ export default function Contact() {
 						<ContactForm />
 					</div>
 					<div className="col-start-3 col-span-full flex flex-col gap-4">
-						<Map />
+						<GoogleMaps />
 					</div>
 				</div>
 			</section>

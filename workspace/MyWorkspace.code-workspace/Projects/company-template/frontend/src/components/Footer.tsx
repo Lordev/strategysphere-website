@@ -2,6 +2,7 @@ import Button from './Button';
 import Image from 'next/image';
 import FooterLink from './FooterLink';
 import { Input } from './ui/input';
+import Link from 'next/link';
 
 export default function Footer() {
 	return (
@@ -21,7 +22,9 @@ export default function Footer() {
 							strategic guidance. Achieve sustainable growth and
 							unlock new opportunities.
 						</p>
-						<Button title="Contact us" />
+						<Link href="./contact" aria-label="contact us">
+							<Button title="Contact us" />
+						</Link>
 					</div>
 					<div className="lg:grid lg:grid-cols-[1fr_1fr_2fr] gap-x-8 grid-cols-none *:mb-16 ">
 						<div>
