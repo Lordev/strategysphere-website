@@ -28,53 +28,53 @@ export default function Footer() {
 					</div>
 					<div className="lg:grid lg:grid-cols-[1fr_1fr_2fr] gap-x-8 grid-cols-none *:mb-16 ">
 						<div>
-							<h5>Halstein</h5>
+							<h5>Company</h5>
 							<ul className="*:mb-4 mt-8">
 								<li>
-									<FooterLink href="#" text="Privacy" />
+									<FooterLink href="/about" text="About us" />
 								</li>
 								<li>
-									<FooterLink href="#" text="Conditions" />
+									<FooterLink href="/team" text="Our team" />
 								</li>
 								<li>
-									<FooterLink href="#" text="Offices" />
+									<FooterLink href="/" text="Careers" />
 								</li>
 								<li>
-									<FooterLink href="#" text="Careers" />
+									<FooterLink href="/" text="Offices" />
 								</li>
 							</ul>
 						</div>
 						<div>
-							<h5>FAQ</h5>
+							<h5>Services</h5>
 							<ul className="*:mb-4 mt-8">
 								<li>
 									<FooterLink
-										href="#"
-										text="Got any questions?"
+										href="/"
+										text="Strategy Consulting"
 									/>
 								</li>
 								<li>
 									<FooterLink
-										href="#"
-										text="Buying tickets?"
+										href="/"
+										text="Portfolio Analysis"
 									/>
 								</li>
 								<li>
 									<FooterLink
-										href="#"
-										text="How to find us?"
+										href="/"
+										text="Financial Modelling"
 									/>
 								</li>
 								<li>
 									<FooterLink
-										href="#"
-										text="How to advertise?"
+										href="/"
+										text="Data & Analytics"
 									/>
 								</li>
 							</ul>
 						</div>
 						<div>
-							<h5>Subscribe</h5>
+							<h5 className="mt-6">Subscribe</h5>
 							<form>
 								<Input
 									autoComplete="email"
@@ -82,7 +82,7 @@ export default function Footer() {
 									className="lg:max-w-[300px] mt-8 w-full text-foreground"
 									required
 								/>
-								<Button title="submit" />
+								<Button title="Subscribe" />
 							</form>
 						</div>
 					</div>
