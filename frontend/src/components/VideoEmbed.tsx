@@ -20,6 +20,8 @@ export default function VideoEmbed({ data }: VideoEmbedProps) {
     return (
         <div className="video-embed relative pb-56.25 h-72 lg:h-[450px] overflow-hidden my-20">
             <iframe
+                loading="lazy"
+                
                 title="video"
                 src={embedUrl}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"

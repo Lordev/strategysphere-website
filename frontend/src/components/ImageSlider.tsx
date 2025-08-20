@@ -42,6 +42,9 @@ export default function ImageSlider({ imageData }: ImageSliderProps) {
 								width={600}
 								alt="alt text"
 								src={image.url}
+								loading="lazy"
+								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 600px"
+								quality={75}
 							/>
 						)}
 					</SwiperSlide>
