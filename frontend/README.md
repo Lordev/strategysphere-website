@@ -90,8 +90,18 @@ Notes
 ## 📸 Showcase
 
 - Home/Landing
-  
+
+https://github.com/user-attachments/assets/5bbd6883-6cc5-458e-85ea-1b4a96d71987
+
 - Blog page
-  
+
+https://github.com/user-attachments/assets/2e2dd4b9-5309-4d2d-b7cb-95b3781d2e0a
+
 - Single post
+
+https://github.com/user-attachments/assets/25b07b3b-bb98-4359-ad39-6ed505d3973a
+
+
+
+
 
