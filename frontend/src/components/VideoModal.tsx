@@ -107,6 +107,7 @@ export default function VideoModal({}) {
 						>
 							<iframe
 								ref={playerRef}
+								title="Vimeo video player"
 								src="https://player.vimeo.com/video/370134864?h=07a5a8322d&autoplay=1"
 								style={{
 									position: 'absolute',
