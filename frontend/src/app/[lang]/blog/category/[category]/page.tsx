@@ -64,7 +64,6 @@ export default async function categoryRoute({
     };
 
     const { posts, categories } = (await fetchData(filter)) as Data;
-    // console.log(posts, categories, params);
     if (!posts) return;
     if (posts.length === 0) return <div>No Posts In this category</div>;
 

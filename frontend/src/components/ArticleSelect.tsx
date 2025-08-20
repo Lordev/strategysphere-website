@@ -31,7 +31,6 @@ export default function ArticleSelect({
 							slug: category.categories.slug,
 						}))
 						.filter(
-							// index comparison to filter repeated categories
 							(category, index, array) =>
 								index ===
 								array.findIndex(

@@ -35,7 +35,6 @@ export default function ArticleSelect({
 							slug: category.categories.slug,
 						}))
 						.filter(
-							// filter repeated categories
 							(category, index, array) =>
 								index ===
 								array.findIndex(
@@ -123,25 +122,6 @@ export default function ArticleSelect({
 						}, [])}
 					</ul>
 				</div>
-
-				{/* <div className="space-y-2">
-                    <h4 className="text-lg font-semibold">All Articles</h4>
-                    <ul className="ml-4 space-y-1 list-disc">
-                        {articles.map((article: ArticleSlug) => {
-                            return (
-                                <li key={article.slug}>
-                                    <Link
-                                        rel="noopener noreferrer"
-                                        href={`/blog/${article.categories.slug}/${article.slug}`}
-                                        className={`hover:underline hover:text-accent transition-colors duration-200`}
-                                    >
-                                        {article.title}
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div> */}
 			</div>
 		</div>
 	);

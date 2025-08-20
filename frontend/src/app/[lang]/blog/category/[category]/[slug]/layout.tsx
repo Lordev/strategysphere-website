@@ -48,7 +48,6 @@ async function fetchSideMenuData(filter: string) {
 			tags: ['article-sidebar', 'page'],
 		});
 
-		// console.log(articlesResponse);o
 		return {
 			articles: articlesResponse,
 			categories: categoriesResponse,

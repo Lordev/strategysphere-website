@@ -12,8 +12,8 @@ export async function sanityFetch<QueryResponse>({
 }) {
     return client.fetch<QueryResponse>(query, params, {
         next: {
-            revalidate: 30, // for simple, time-based revalidation
-            tags, // for tag-based revalidation
+            revalidate: 30, 
+            tags, 
         },
     });
 }

@@ -23,18 +23,18 @@ const options = {
     scales: {
         x: {
             grid: {
-                color: "#737687", // Change grid color for X-axis
+                color: "#737687", 
             },
             ticks: {
-                color: "#c9cde0", // Change text color for X-axis scale
+                color: "#c9cde0", 
             },
         },
         y: {
             grid: {
-                color: "#737687", // Change grid color for Y-axis
+                color: "#737687",
             },
             ticks: {
-                color: "#c9cde0", // Change text color for X-axis scale
+                color: "#c9cde0",
             },
         },
     },

@@ -12,7 +12,6 @@ interface Data {
 export default async function AuthorRoute({ params }: { params: { date: string } }) {
     if (!params) return;
     const filter = params.date;
-    // console.log("date filtered:", filter);
     const fetchData = async (filter: string) => {
         try {
             const dataFilteredByDate = await sanityFetch<Posts[]>({
@@ -58,13 +57,15 @@ export default async function AuthorRoute({ params }: { params: { date: string }
         }
     };
     const { posts, categories } = (await fetchData(filter)) as Data;
-    // console.log("data route data :", posts);
+    
     if (!posts || posts.length === 0) return;
+    
     if (!categories || categories.length === 0) return;
+    
     const filteredPosts = posts.filter(
         (post) => post.publishedAt.substring(0, 7) === filter
     );
-    // console.log("filtered posts: ", filteredPosts);
+    
     if (posts.length === 0) return <div>No Posts In this category</div>;
 
     return (

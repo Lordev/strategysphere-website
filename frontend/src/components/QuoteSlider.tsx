@@ -24,8 +24,6 @@ export default function QuoteSlider() {
 				nextEl: '.custom-next',
 				prevEl: '.custom-prev',
 			}}
-			// pagination={{ clickable: true }}
-			// scrollbar={{ draggable: true }}
 			className="relative"
 			id="quote-swiper"
 		>

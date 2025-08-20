@@ -1,6 +1,6 @@
 import MenuProvider from "@/context/useContextMenu";
 import ScreenBreakPointProvider from "@/context/useContextScreenBreakPoints";
-import "./globals.css"; //
+import "./globals.css"; 
 import { Inter, Marcellus } from "next/font/google";
 import type { Metadata } from "next";
 import Header from "@/components/Header";

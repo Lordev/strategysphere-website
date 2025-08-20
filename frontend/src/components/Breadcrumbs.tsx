@@ -19,7 +19,6 @@ const sharedClasses =
 
 const lastSegment = '2024';
 
-// Function to convert year and month to string representation
 function convertToMonthString(year: string, month: string) {
 	const monthNames = [
 		'January',
@@ -42,14 +41,12 @@ function convertToMonthString(year: string, month: string) {
 const detectDate = (segment: string) => {
 	const parts = segment.split('-');
 	if (parts.length === 1 && parts[0].match(/^\d{4}$/)) {
-		// Year only
 		return `This year`;
 	} else if (
 		parts.length === 2 &&
 		parts[0].match(/^\d{4}$/) &&
 		parts[1].match(/^\d{1,2}$/)
 	) {
-		// Year and month
 		const [year, month] = parts;
 		return convertToMonthString(year, month);
 	} else {
@@ -71,7 +68,7 @@ export const NextBreadcrumb = ({
 	const pathNames = decodedPath.split('/').filter(path => path);
 
 	const transformedPath = pathNames
-		.slice(0, -1) // Exclude the last item
+		.slice(0, -1) 
 		.map(item => item.split('-').join(' '));
 
 	const lastItem = pathNames[pathNames.length - 1];
@@ -106,7 +103,7 @@ export const NextBreadcrumb = ({
 								link.slice(1).replaceAll('-', ' ')
 							: link.replaceAll('-', ' ');
 
-						return { href, itemClasses, itemLink, isLastItem }; // Include isLastItem flag in the returned object
+						return { href, itemClasses, itemLink, isLastItem };
 					})
 					.filter((_, index) => !filter.includes(index))
 					.map(

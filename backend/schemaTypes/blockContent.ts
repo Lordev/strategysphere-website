@@ -20,7 +20,6 @@ export const blockContent = defineType({
         {
           title: 'Quote',
           value: 'blockquote',
-          // fields: [{type: 'string', name: 'artist', title: 'Artist'}],
         },
       ],
 

@@ -1,7 +1,6 @@
 "use client";
 import { PropsWithChildren, createContext, useContext, useState } from "react";
 
-// Define the Menu Context type
 export interface MenuContextType {
     isMenuOpen: boolean;
     toggleMenu: () => void;
@@ -9,10 +8,8 @@ export interface MenuContextType {
     openMenu: () => void;
 }
 
-// Create the Context
 const MenuContext = createContext<MenuContextType | undefined>(undefined);
 
-// Custom hook to use the Menu Context
 export const useMenu = (): MenuContextType => {
     const context = useContext(MenuContext);
     if (!context) {
@@ -21,7 +18,6 @@ export const useMenu = (): MenuContextType => {
     return context;
 };
 
-// Menu Provider Component
 export default function MenuProvider({ children }: PropsWithChildren) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 

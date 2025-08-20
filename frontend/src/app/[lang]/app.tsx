@@ -10,18 +10,6 @@ const MyApp: React.FC<{ Component: React.ComponentType<any>; pageProps: any }> =
 }) => {
     const router = useRouter();
 
-    useEffect(() => {
-        const handleRouteChange = (url: string) => {
-            // Your custom logic for route change tracking goes here
-        };
-
-        router.events.on("routeChangeComplete", handleRouteChange);
-
-        return () => {
-            router.events.off("routeChangeComplete", handleRouteChange);
-        };
-    }, [router.events]);
-
     return (
         <>
             <NavMenu />

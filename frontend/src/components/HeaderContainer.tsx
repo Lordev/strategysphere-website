@@ -22,13 +22,8 @@ export default function HeaderContainer({ children }: PropsWithChildren) {
 
         setSticky(currentScroll > 86);
 
-        // Initial calculations
-
         window.addEventListener("scroll", handleScroll);
 
-        // Listen for viewport changes
-
-        // Clean up the event listeners on unmount
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };

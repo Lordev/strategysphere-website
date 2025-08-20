@@ -46,7 +46,7 @@ export interface Post {
     author: {
         name: string;
         bio: string;
-        image: string; // Assuming the author's image is a URL
+        image: string;
     };
     categories: {
         title: string;

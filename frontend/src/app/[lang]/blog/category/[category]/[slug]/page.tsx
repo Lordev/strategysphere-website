@@ -85,26 +85,23 @@ export async function generateStaticParams({
 	try {
 		const { slug } = params;
 
-		// Ensure that slug is defined before fetching data
 		if (!slug) {
 			return [];
 		}
 
 		const data = await fetchAPI(slug);
 
-		// If no data is fetched or data array is empty, return an empty array
 		if (!data || data.length === 0) {
 			return [];
 		}
 
-		// Map over the data and return an array of { slug, category }
 		return data.map(item => ({
 			slug: item.slug,
 			categories: item.categories.slug,
 		}));
+
 	} catch (error) {
 		console.error('Error generating static params:', error);
-		// Return an empty array or handle the error as needed
 		return [];
 	}
 }
@@ -114,10 +111,8 @@ export default async function PostRoute({
 	params: { slug: string };
 }) {
 	const { slug } = params;
-	// console.log("slug param", slug);
 
 	const data = await fetchAPI(slug);
-	// console.log(data);
 	if (!data || data.length == 0) return <h2>no post found</h2>;
 	return (
 		<>

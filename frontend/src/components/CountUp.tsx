@@ -11,7 +11,6 @@ export default function Counter({ endtime }: CounterProps) {
     const [hasAnimated, setHasAnimated] = useState(false);
     const [inViewRef, inView] = useInView();
 
-    // Run the animation only once when inView becomes true
     if (inView && !hasAnimated) {
         setHasAnimated(true);
     }

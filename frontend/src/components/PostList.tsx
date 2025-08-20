@@ -1,5 +1,3 @@
-// ./frontend/src/app/[lang]/components/PostList.tsx
-
 import Image from "next/image";
 import Link from "next/link";
 import formatDate from "@/utils/formatDate";
@@ -17,7 +15,6 @@ export default function PostList({
             <div className="grid justify-center grid-cols-1 gap-y-10 gap-x-12 lg:grid-cols-2 2xl:grid-cols-3">
                 {articles.map((article) => {
                     const imageUrl = article.mainImage;
-                    // const category = article.categories?.title;
                     const authorsName = article.author?.name;
                     const avatarUrl = article.author?.image;
 

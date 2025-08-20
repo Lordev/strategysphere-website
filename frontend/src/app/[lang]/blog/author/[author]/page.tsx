@@ -50,7 +50,6 @@ export default async function AuthorRoute({ params }: { params: { author: string
             });
             return {
                 posts: dataFilteredByAuthor,
-                // articles: articleResponse,
                 categories: categoriesResponse,
             };
         } catch (error) {

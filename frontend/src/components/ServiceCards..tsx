@@ -18,7 +18,6 @@ export default function ServiceCards() {
 							height={50}
 							color="var(--primary)"
 						/>
-						<h2 className="card-title"></h2>
 						<p>
 							Over 100K satisfied clients experiencing rapid
 							business expansion.
@@ -36,7 +35,6 @@ export default function ServiceCards() {
 							height={50}
 							color="var(--primary)"
 						/>
-						<h2 className="card-title"></h2>
 						<p>
 							Ranked #1 in strategic planning for industry
 							dominance.
@@ -56,7 +54,6 @@ export default function ServiceCards() {
 							height={50}
 							color="var(--primary)"
 						/>
-						<h2 className="card-title"></h2>
 						<p>
 							Over 50 strategies to maximize financial potential
 							and minimize risk.
@@ -77,7 +74,6 @@ export default function ServiceCards() {
 							height={50}
 							color="var(--primary)"
 						/>
-						<h2 className="card-title"></h2>
 						<p>
 							90+ strategic partnerships fostering mutual growth.
 						</p>
