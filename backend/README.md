@@ -25,10 +25,4 @@ This Studio is provided primarily for demonstration and content editing previews
 
 Quick overview of what you can edit in Studio:
 
---input video
-
-- Posts: title, slug, author (ref), main image, categories, publishedAt, description and `body` (Portable Text with images, galleries and embeds).
-- Authors: name, bio and avatar image; referenced from posts.
-- Categories: simple category documents used for filtering and dynamic category routes.
-- Image galleries: an `imageGallery` object with an images array and a custom preview component in the Studio.
-- YouTube embeds: `youtube` object with URL and a preview component that extracts the video id.
+https://github.com/user-attachments/assets/4e89ef4d-0400-4a4d-98f0-8f76a56f5613
